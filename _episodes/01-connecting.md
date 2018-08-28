@@ -39,7 +39,7 @@ key sequence: Ctrl+Alt+T.
 
 ### Mac
 
-Macs have had a terminal built in since the first version of OSX since it is
+Macs have had a terminal built in since the first version of OS X since it is
 built on a Linux flavour known as BSD (Berkeley Systems Designs). 
 The terminal can be quickly opened through the use of the Searchlight tool. 
 Hold down the command key and press the spacebar. 
