@@ -152,7 +152,7 @@ Other folders on a UNIX OS contain system files, and get modified and changed as
 > * **Network filesystem** - Your home directory is an example of a network filesystem. Data stored here is available throughout the HPC system and files stored here are backed up. Files stored here are typically slower to access, the data is actually stored on another computer and is being transmitted and made available over the network! `/project` and `/home` are both network filesystems. 
 > * **Scratch** - Some systems may offer "scratch" space. Scratch space is typically faster to use than your home directory or network filesystem, but is not usually backed up, and should not be used for long term storage. In the last example, `/scratch` is a scratch drive.
 > * **Local scratch (job only)** - Some systems may offer local scratch space while executing a job. Such storage is very fast, but will be deleted at the end of your job.
-> * **Ramdisk (job only)** - Some systems may let you store files in a "RAM disk" while running a job, where files are stored directly in the computer's memory. This extremely fast, but files stored here will count against your job's memory usage and be deleted at the end of your job. 
+> * **Ramdisk (job only)** - Some systems may let you store files in a "ramdisk" while running a job, where files are stored directly in the computer's memory. This extremely fast, but files stored here will count against your job's memory usage and be deleted at the end of your job. 
 {: .callout}
 
 There are several other useful shortcuts you should be aware of.  
