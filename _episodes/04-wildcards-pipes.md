@@ -40,7 +40,7 @@ Let's use our example data to see what I mean.
 ```
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 bash-lesson.tar.gz                           SRR307024_2.fastq  SRR307028_1.fastq
@@ -60,7 +60,7 @@ lines.
 ```
 $ wc -l dmel-all-r6.19.gtf
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 542048 dmel-all-r6.19.gtf
@@ -74,7 +74,7 @@ file ending in `.fastq`.
 ```
 $ wc -l *.fastq
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 20000 SRR307023_1.fastq
@@ -103,7 +103,7 @@ nice trick to keep in mind is that `*` by itself matches *every* file.
 ```
 $ wc -l *
 ```
-{: .bash}
+{: .language-bash}
 
 ```
     53037 bash-lesson.tar.gz
@@ -159,7 +159,7 @@ $ echo "this is a test" > test.txt
 $ ls
 $ cat test.txt
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 this is a test
@@ -178,7 +178,7 @@ Awesome, let's try that with a more complicated command, like `wc -l`.
 $ wc -l * > word_counts.txt
 $ cat word_counts.txt
 ```
-{: .bash}
+{: .language-bash}
 ```
 wc: fastq: Is a directory
 
@@ -218,7 +218,7 @@ the error message) to the same `word_counts.txt` files as before.
 ```
 $ wc -l * &> word_counts.txt
 ```
-{: .bash}
+{: .language-bash}
 
 Notice how there was no output to the console that time. Let's check that the error message went to
 the file like we specified.
@@ -226,7 +226,7 @@ the file like we specified.
 ```
 $ cat word_counts.txt
 ```
-{: .bash}
+{: .language-bash}
 ```
     53037 bash-lesson.tar.gz
    542048 dmel-all-r6.19.gtf
@@ -251,7 +251,7 @@ Appending to a file is done the same was as redirecting output. However, instead
 $ echo "We want to add this sentence to the end of our file" >> word_counts.txt
 $ cat word_counts.txt
 ```
-{: .bash}
+{: .language-bash}
 ```
   22129 dmel_unique_protein_isoforms_fb_2016_01.tsv
  471308 Drosophila_melanogaster.BDGP5.77.gtf
@@ -278,7 +278,7 @@ fileToSearch`. Let's use `grep` to find all of the entries pertaining to the `Ac
 ```
 $ grep Act5C dmel-all-r6.19.gtf
 ```
-{: .bash}
+{: .language-bash}
 
 The output is nearly unintelligible since there is so much of it. Let's send the output of that
 `grep` command to `head` so we can just take a peek at the first line. The `|` operator lets us send
@@ -287,7 +287,7 @@ output from one command to the next:
 ```
 $ grep Act5C dmel-all-r6.19.gtf | head -n 1
 ```
-{: .bash}
+{: .language-bash}
 ```
 X	FlyBase	gene	5900861	5905399	.	+	.	gene_id "FBgn0000042"; gene_symbol "Act5C";
 ```
@@ -299,7 +299,7 @@ Act5C with `wc -l`. We can do the same trick to send `grep`'s output to `wc -l`:
 ```
 $ grep Act5C dmel-all-r6.19.gtf | wc -l
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 46
@@ -321,7 +321,7 @@ from that file.
 > ```
 > $ gzip gene_association.fb
 > ```
-> {: .bash}
+> {: .language-bash}
 >
 > `zcat` acts like `cat`, except that it can read information from `.gz` (compressed) files. Using
 > `zcat`, can you write a command to take a look at the top few lines of the

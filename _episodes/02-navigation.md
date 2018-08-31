@@ -27,7 +27,7 @@ Right now, all we see is something that looks like this:
 ~~~
 $
 ~~~
-{: .bash}
+{: .language-bash}
 
 The dollar sign is a **prompt**, which shows us that the shell is waiting for input; your shell may
 use a different character as a prompt and may add information before the prompt. When typing
@@ -41,7 +41,7 @@ thinks we are:
 ~~~
 $ whoami
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 jeff
 ~~~
@@ -63,7 +63,7 @@ of your home directory may differ from system to system.
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 /home/jeff
 ~~~
@@ -73,7 +73,7 @@ So, we know where we are. How do we look and see what's in our current directory
 ```
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 `ls` prints the names of the files and directories in the current directory in alphabetical order,
 arranged neatly into columns.
@@ -104,7 +104,7 @@ argument that specifies the name of the directory you wish to create.
 ```
 $ mkdir documents
 ```
-{: .bash}
+{: .language-bash}
 
 Let's us `ls` again. What do we see?
 
@@ -115,7 +115,7 @@ Our folder is there, awesome. What if we wanted to go inside it and do stuff the
 $ cd documents
 $ pwd
 ```
-{: .bash}
+{: .language-bash}
 ```
 ~/documents
 ```
@@ -130,7 +130,7 @@ To go back to your home directory, the following two commands will work:
 cd /home/yourUserName
 cd ~
 ```
-{: .bash}
+{: .language-bash}
 
 What is the `~` character? When using the shell, `~` is a shortcut that represents
 `/home/yourUserName`.
@@ -144,7 +144,7 @@ Let's go there now, look around, and then return to our home directory.
 ```
 cd / ls cd ~
 ```
-{: .bash}
+{: .language-bash}
 ```
 bin   cvmfs  etc   initrd  lib64  localscratch  mnt  opt   project  root  sbin     srv  tmp  var
 boot  dev    home  lib     local  media         nix  proc  ram      run   scratch  sys  usr  work
@@ -191,7 +191,7 @@ $ pwd
 $ cd ..
 $ pwd
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 /home/jeff/documents
@@ -214,7 +214,7 @@ need to see all the time.
 ```
 $ ls -a
 ```
-{: .bash}
+{: .language-bash}
 ```
 .   .bash_history  .bash_profile  documents  .oracle_jre_usage  .Xauthority
 ..  .bash_logout   .bashrc        .licenses  .pki
@@ -227,7 +227,7 @@ modified, permissions, and other things with `-l`.
 ```
 $ ls -l
 ```
-{: .bash}
+{: .language-bash}
 ```
 drwxr-xr-x 2 jeff jeff 4096 Jan 14 17:31 documents
 ```
@@ -242,7 +242,7 @@ We can also use multiple flags at the same time!
 ```
 $ ls -l -a
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 drwx------.    6 jeff jeff  4096 Jan 14 17:31 .
@@ -266,14 +266,14 @@ syntax (how it's supposed to be typed) generally looks something like this:
 ```
 $ command <flags/options> <arguments>
 ```
-{: .bash}
+{: .language-bash}
 
 So using `ls -l -a` on a different directory than the one we're in would look something like:
 
 ```
 $ ls -l -a ~/documents
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 drwx------  6 jeff jeff 4096 Jan 14 17:31 .
@@ -290,7 +290,7 @@ need help? There is a very helpful manual for most UNIX commands: `man` (if you'
 ```
 $ man ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 LS(1)                                                   User Commands                                                  LS(1)
@@ -319,7 +319,7 @@ For instance, with `ls`:
 ```
 $ ls --help
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 Usage: ls [OPTION]... [FILE]...
@@ -347,7 +347,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > ~~~
 > [remote]$ ls -j
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > 
 > ~~~
 > ls: invalid option -- 'j'

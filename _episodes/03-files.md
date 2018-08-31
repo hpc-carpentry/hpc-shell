@@ -18,7 +18,7 @@ files! We'll start by moving back to our home directory:
 ```
 $ cd ~
 ```
-{: .bash}
+{: .language-bash}
 
 What if we want to make a file? There are a few ways of doing this, the easiest of which is simply
 using a text editor. For this lesson, we are going to us `nano`, since it's super easy to use.
@@ -50,7 +50,7 @@ Let's make a new file now, type whatever you want in it, and save it.
 ```
 nano test.txt
 ```
-{: .bash}
+{: .language-bash}
 
 ![Nano in action](/fig/nano-screenshot.png)
 
@@ -59,7 +59,7 @@ Do a quick check to confirm our file was created.
 ```
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 test.txt
@@ -72,7 +72,7 @@ simply reading the entire file with `cat`.
 ```
 $ cat test.txt
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 This is the contents of our test file.
@@ -86,7 +86,7 @@ next, and so on.
 ```
 $ cat test.txt test.txt
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 This is the contents of our test file.
@@ -101,7 +101,7 @@ We've successfully created a file. What about a directory? We've actually done t
 $ mkdir files
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 ## Moving and copying files
 
@@ -114,7 +114,7 @@ $ mv test.txt files
 $ cd files
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 ```
 test.txt
 ```
@@ -130,7 +130,7 @@ quite similar to moving files: `mv oldName newName`.
 $ mv test.txt newname.testfile
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 ```
 newname.testfile
 ```
@@ -161,7 +161,7 @@ $ cp newname.testfile ..
 $ cd ..
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 newname.testfile copy.testfile
@@ -184,7 +184,7 @@ $ ls
 $ rm newname.testfile
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 files Documents newname.testfile
@@ -200,7 +200,7 @@ $ rmdir Documents
 $ rmdir files
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 files Documents
@@ -243,7 +243,7 @@ downloads a file from a link).
 ```
 wget http://hpc-carpentry.github.io/hpc-intro/files/bash-lesson.tar.gz
 ```
-{: .bash}
+{: .language-bash}
 
 You'll commonly encounter `.tar.gz` archives while working in UNIX. To extract the files from a
 `.tar.gz` file, we run the command `tar -xvf filename.tar.gz`:
@@ -251,7 +251,7 @@ You'll commonly encounter `.tar.gz` archives while working in UNIX. To extract t
 ```
 tar -xvf bash-lesson.tar.gz
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 dmel-all-r6.19.gtf

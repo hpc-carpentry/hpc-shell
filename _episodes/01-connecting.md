@@ -111,7 +111,7 @@ Let's attempt to connect to the cluster now:
 ```
 ssh yourUsername@graham.computecanada.ca
 ```
-{: .bash}
+{: .language-bash}
 
 ```{.output}
 The authenticity of host 'graham.computecanada.ca (199.241.166.2)' can't be established.
