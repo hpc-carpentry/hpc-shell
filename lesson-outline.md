@@ -1,8 +1,11 @@
+---
+layout: page
+title: Lesson Outline
+---
 # Lesson outline and todo list
 
-This is the tentative list of tasks and topics for each lesson.
-Lesson writers are indicated with first/last initials (e.g. AR).
-Feel free to edit the topics for your section.
+This is the tentative list of tasks and topics for each lesson. Lesson writers are indicated with
+first/last initials (e.g. AR). Feel free to edit the topics for your section.
 
 ## 1. UNIX fundamentals - AR
 
@@ -53,8 +56,7 @@ Feel free to edit the topics for your section.
 	* For-loops
 	* Reading/writing data
 
-Some side notes: 
-perhaps a quick refresh of key concepts right before use in parallel section,
+Some side notes: perhaps a quick refresh of key concepts right before use in parallel section,
 certain concepts could get mixed in right before they're needed by the parallel lesson.
 
 ## 4. Intro to parallel programming (Python - JB, Chapel - JZ+AR)
