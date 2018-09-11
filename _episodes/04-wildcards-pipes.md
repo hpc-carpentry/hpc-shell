@@ -21,7 +21,7 @@ keypoints:
 > If you didn't get them in the last lesson, make sure to download the example files used in the
 > next few sections:
 > 
-> **Using wget** - `wget http://hpc-carpentry.github.io/hpc-shell/files/bash-lesson.tar.gz`
+> **Using wget** - `wget {{site.url}}/files/bash-lesson.tar.gz`
 >
 > **Using a web browser** -
 > [http://hpc-carpentry.github.io/hpc-shell/files/bash-lesson.tar.gz](http://hpc-carpentry.github.io/hpc-shell/files/bash-lesson.tar.gz)
