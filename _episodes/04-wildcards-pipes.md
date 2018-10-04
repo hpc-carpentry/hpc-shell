@@ -24,7 +24,7 @@ keypoints:
 > **Using wget** - `wget {{site.url}}/files/bash-lesson.tar.gz`
 >
 > **Using a web browser** -
-> [http://hpc-carpentry.github.io/hpc-shell/files/bash-lesson.tar.gz](http://hpc-carpentry.github.io/hpc-shell/files/bash-lesson.tar.gz)
+> [{{site.url}}/files/bash-lesson.tar.gz]({{site.url}}/files/bash-lesson.tar.gz)
 {: .testimonial}
 
 Now that we know most of the basic UNIX commands, we are going to explore some more advanced
