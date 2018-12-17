@@ -53,7 +53,7 @@ nano test.txt
 ```
 {: .language-bash}
 
-![Nano in action](/fig/nano-screenshot.png)
+![Nano in action]({{ site.url }}{{ site.baseurl }}/fig/nano-screenshot.png)
 
 Do a quick check to confirm our file was created.
 
