@@ -15,11 +15,11 @@ suitable for teaching the use of the shell for any remote, advanced computing re
    [_includes/snippets](_includes/snippets). These snippets provide inputs and outputs that 
    are host-specific and that are included automatically based on the configuration in the 
    `_config.yml` file.
-   a. Code snippets are in files named `snippet_name.host_id` and are included automatically
+   1. Code snippets are in files named `snippet_name.host_id` and are included automatically
       when the lesson is built. For example, if the `snippet_name` was `login_output` and the
      `host_id` was `ComputeCanada_Graham`, then the snippet file would be called
      `login_output.ComputeCanada_Graham`.
-   b. Code snippets are placed in subdirectories that are named according to the episode they
+   2. Code snippets are placed in subdirectories that are named according to the episode they
       appear in. For example, if the snippet is for episode 01, then it will be in a 
       subdirectory called `01`.
 
