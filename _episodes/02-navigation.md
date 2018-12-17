@@ -25,7 +25,7 @@ you will know how to "move around" the system and look at what's there.
 Right now, all we see is something that looks like this:
 
 ~~~
-$
+{{ site.workshop_host_prompt }}
 ~~~
 {: .language-bash}
 
@@ -57,15 +57,15 @@ More specifically, when we type `whoami` the shell:
 Next, let's find out where we are by running a command called `pwd` (which stands for "print working
 directory"). At any moment, our **current working directory** (where we are) is the directory that
 the computer assumes we want to run commands in unless we explicitly specify something else. Here,
-the computer's response is `/home/jeff`, which is Jeff's **home directory**: Note that the location
-of your home directory may differ from system to system.
+the computer's response is `{{ site.workshop_host_homedir }}/yourUsername`, which is ``yourUsername`` **home directory**.
+Note that the location of your home directory may differ from system to system.
 
 ~~~
 $ pwd
 ~~~
 {: .language-bash}
 ~~~
-/home/jeff
+{{ site.workshop_host_homedir }}/yourUsername
 ~~~
 {: .output}
 
@@ -109,7 +109,7 @@ $ mkdir documents
 Let's us `ls` again. What do we see?
 
 Our folder is there, awesome. What if we wanted to go inside it and do stuff there? We will use the
-`cd` (change directory) command to move around. Let's `cd` into our new Documents folder.
+`cd` (change directory) command to move around. Let's `cd` into our new documents folder.
 
 ```
 $ cd documents
@@ -127,13 +127,13 @@ if we get "lost" and want to get back to where we started?
 To go back to your home directory, the following two commands will work:
 
 ```
-cd /home/yourUserName
+cd {{ site.workshop_host_homedir }}/yourUserName
 cd ~
 ```
 {: .language-bash}
 
 What is the `~` character? When using the shell, `~` is a shortcut that represents
-`/home/yourUserName`.
+`{{ site.workshop_host_homedir }}/yourUserName`.
 
 A quick note on the structure of a UNIX (Linux/Mac/Android/Solaris/etc) filesystem. Directories and
 absolute paths (i.e. exact position in the system) are always prefixed with a `/`. `/` is the "root"
@@ -142,7 +142,9 @@ or base directory.
 Let's go there now, look around, and then return to our home directory.
 
 ```
-cd / ls cd ~
+cd /
+ls
+cd ~
 ```
 {: .language-bash}
 ```
@@ -164,11 +166,15 @@ your OS.
 > * **Network filesystem** - Your home directory is an example of a network filesystem. Data stored
 >   here is available throughout the HPC system and files stored here are backed up. Files stored
 >   here are typically slower to access, the data is actually stored on another computer and is
->   being transmitted and made available over the network! `/project` and `/home` are both network
->   filesystems.
+>   being transmitted and made available over the network!
 > * **Scratch** - Some systems may offer "scratch" space. Scratch space is typically faster to use
 >   than your home directory or network filesystem, but is not usually backed up, and should not be
->   used for long term storage. In the last example, `/scratch` is a scratch drive.
+>   used for long term storage.
+> * **Work file system** - As an alternative to (or sometimes as well as) Scratch space, some HPC 
+>   systems offer fast parallel file system access as a work file system. Typically, this will have 
+>   higher performance than your home directory or network file system and will not usually be 
+>   backed up. It differs from scratch space in that files in a work file system are not automatically
+>   deleted for you, you must manage the space yourself.
 > * **Local scratch (job only)** - Some systems may offer local scratch space while executing a job.
 >   Such storage is very fast, but will be deleted at the end of your job.
 > * **Ramdisk (job only)** - Some systems may let you store files in a "RAM disk" while running a
@@ -194,8 +200,8 @@ $ pwd
 {: .language-bash}
 
 ```
-/home/jeff/documents
-/home/jeff
+{{ site.workshop_host_homedir }}/yourUserName/documents
+{{ site.workshop_host_homedir }}/yourUserName
 ```
 {: .output}
 
@@ -216,8 +222,7 @@ $ ls -a
 ```
 {: .language-bash}
 ```
-.   .bash_history  .bash_profile  documents  .oracle_jre_usage  .Xauthority
-..  .bash_logout   .bashrc        .licenses  .pki
+.  ..  .bash_logout  .bash_profile  .bashrc  documents  .emacs  .mozilla  .ssh
 ```
 {: .output}
 
@@ -229,7 +234,7 @@ $ ls -l
 ```
 {: .language-bash}
 ```
-drwxr-xr-x 2 jeff jeff 4096 Jan 14 17:31 documents
+drwxr-xr-x 2 yourUsername tc001 4096 Jan 14 17:31 documents
 ```
 {: .output}
 
@@ -245,17 +250,17 @@ $ ls -l -a
 {: .language-bash}
 
 ```
-drwx------.    6 jeff jeff  4096 Jan 14 17:31 .
-drwxrwxr-x  2805 root root 98304 Jan 12 12:03 ..
--rw-------     1 jeff jeff    63 Jan  3 11:32 .bash_history
--rw-r--r--.    1 jeff jeff    18 Jan  2 14:20 .bash_logout
--rw-r--r--.    1 jeff jeff   193 Jan  2 14:20 .bash_profile
--rw-r--r--.    1 jeff jeff   231 Jan  2 14:20 .bashrc
-drwxr-xr-x     2 jeff jeff  4096 Jan 14 17:31 documents
-drwxr-xr-x     2 jeff jeff  4096 Jan 14 17:31 .licenses
-drwxr-xr-x     2 jeff jeff  4096 Jan  3 11:30 .oracle_jre_usage
-drwxr-----     3 jeff jeff  4096 Jan  3 11:32 .pki
--rw-------     1 jeff jeff   106 Jan 14 17:31 .Xauthority
+{{ site.workshop_host_prompt }} ls -la
+total 36
+drwx--S--- 5 yourUsername tc001 4096 Nov 28 09:58 .
+drwxr-x--- 3 root         tc001 4096 Nov 28 09:40 ..
+-rw-r--r-- 1 yourUsername tc001   18 Dec  6  2016 .bash_logout
+-rw-r--r-- 1 yourUsername tc001  193 Dec  6  2016 .bash_profile
+-rw-r--r-- 1 yourUsername tc001  231 Dec  6  2016 .bashrc
+drwxr-sr-x 2 yourUsername tc001 4096 Nov 28 09:58 documents
+-rw-r--r-- 1 yourUsername tc001  334 Mar  3  2017 .emacs
+drwxr-xr-x 4 yourUsername tc001 4096 Aug  2  2016 .mozilla
+drwx--S--- 2 yourUsername tc001 4096 Nov 28 09:58 .ssh
 ```
 {: .output}
 
@@ -276,8 +281,8 @@ $ ls -l -a ~/documents
 {: .language-bash}
 
 ```
-drwx------  6 jeff jeff 4096 Jan 14 17:31 .
-drwxrwxr-x. 2 jeff jeff 4096 Jan 14 17:31 ..
+drwxr-sr-x 2 yourUsername tc001 4096 Nov 28 09:58 .
+drwx--S--- 5 yourUsername tc001 4096 Nov 28 09:58 ..
 ```
 {: .output}
 

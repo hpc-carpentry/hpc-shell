@@ -100,3 +100,12 @@ exclude:
 # Turn on built-in syntax highlighting.
 highlighter: rouge
 
+# Local host and scheduler options
+workshop_host: "Graham"
+workshop_host_id: "ComputeCanada_graham"
+workshop_host_login: "graham.computecanada.ca"
+workshop_host_location: "University of Waterloo"
+workshop_host_ip: "199.241.166.2"
+workshop_host_prompt: "[yourUsername@gra-login1 ~]$ "
+workshop_host_homedir: "/home/yourUserName"
+workshop_sched_id: "ComputeCanada_graham_slurm"
