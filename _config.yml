@@ -100,7 +100,14 @@ exclude:
 # Turn on built-in syntax highlighting.
 highlighter: rouge
 
-# Local host and scheduler options
+# Local host and scheduler options:
+# * workshop_host - The name of the remote system
+# * workshop_host_id - A unique string to identify the system (used to name code snippets)
+# * workshop_host_login - The login address for the remote system
+# * workshop_host_location - The location of the remote system
+# * workshop_host_prompt - The bash prompt on the remote host
+# * workshop_host_homedir - The location of the home directory on the remote host
+#
 # Example: Graham cluster at Compute Canada, University of Waterloo
 workshop_host: "Graham"
 workshop_host_id: "ComputeCanada_Graham"
@@ -116,4 +123,3 @@ workshop_sched_id: "ComputeCanada_Graham_slurm"
 # workshop_host_location: "EPCC, The University of Edinburgh"
 # workshop_host_prompt: "[yourUsername@cirrus-login0 ~]$ "
 # workshop_host_homedir: "/lustre/home/tc001"
-# workshop_sched_id: "EPCC_Cirrus_pbs"
