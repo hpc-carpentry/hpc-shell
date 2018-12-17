@@ -114,7 +114,7 @@ workshop_host_id: "ComputeCanada_Graham"
 workshop_host_login: "graham.computecanada.ca"
 workshop_host_location: "University of Waterloo"
 workshop_host_prompt: "[yourUsername@gra-login1 ~]$ "
-workshop_host_homedir: "/home/yourUserName"
+workshop_host_homedir: "/home"
 workshop_sched_id: "ComputeCanada_Graham_slurm"
 # Example: Cirrus at EPCC, The University of Edinburgh
 # workshop_host: "Cirrus"
