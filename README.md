@@ -4,7 +4,8 @@ This lesson provides an introduction to the bash shell aimed at researchers who 
 the command line to use remote, high-performance computing (HPC) systems. The material is also
 suitable for teaching the use of the shell for any remote, advanced computing resources.
 
-## Using this material
+
+## Using this material
 
 1. Follow the found in the [Software Carpentry example lesson source](https://github.com/carpentries/lesson-example/)
    to create a repository for your lesson.
