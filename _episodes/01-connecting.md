@@ -126,12 +126,11 @@ Last login: Wed Nov 28 08:46:30 2018 from cpc102380-sgyl38-2-0-cust601.18-2.cabl
 ```
 
 If you've connected successfully, you should see a prompt like the one below. This prompt is
-informative, and lets you grasp certain information at a glance: in this case
-`[yourUsername@computerName workingDirectory]$`. (If you don't understand what these things are,
+informative, and lets you grasp certain information at a glance. (If you don't understand what these things are,
 don't worry! We will cover things in depth as we explore the system further.)
 
 ```{.output}
-[yourUsername@{{ site.workshop_host_prompt }} ~]$
+{{ site.workshop_host_prompt }}
 ```
 
 ## Telling the Difference between the Local Terminal and the Remote Terminal
@@ -146,7 +145,7 @@ for every user. We still need to indicate which system we are entering commands 
 adopt the following convention:
 
 - `[local]$` when the command is to be entered on a terminal connected to your local computer
-- `[remote]$` when the command is to be entered on a terminal connected to the remote system
+- `{{ site.workshop_host_prompt }}` when the command is to be entered on a terminal connected to the remote system
 - `$` when it really doesn't matter which system the terminal is connected to.
 
 > ## Being Certain Which System your Terminal is connected to
@@ -160,6 +159,6 @@ adopt the following convention:
 > It is strongly recommended that you have two terminals open, one connected to the local system and
 > one connected to the remote system, that you can switch back and forth between. If you only use
 > one terminal window then you will need to reconnect to the remote system using one of the methods
-> above when you see a change from `[local]$` to `[remote]$` and disconnect when you see the
+> above when you see a change from `[local]$` to `{{ site.workshop_host_prompt }}` and disconnect when you see the
 > reverse.
 {: .callout}

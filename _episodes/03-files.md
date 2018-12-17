@@ -243,7 +243,7 @@ Let's grab and unpack a set of demo files for use later. To do this, we'll use `
 downloads a file from a link).
 
 ```
-wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
+$ wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 ```
 {: .language-bash}
 
@@ -251,7 +251,7 @@ You'll commonly encounter `.tar.gz` archives while working in UNIX. To extract t
 `.tar.gz` file, we run the command `tar -xvf filename.tar.gz`:
 
 ```
-tar -xvf bash-lesson.tar.gz
+$ tar -xvf bash-lesson.tar.gz
 ```
 {: .language-bash}
 

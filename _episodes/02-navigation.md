@@ -43,7 +43,7 @@ $ whoami
 ~~~
 {: .language-bash}
 ~~~
-jeff
+yourUsername
 ~~~
 {: .output}
 
@@ -127,8 +127,8 @@ if we get "lost" and want to get back to where we started?
 To go back to your home directory, the following two commands will work:
 
 ```
-cd {{ site.workshop_host_homedir }}/yourUserName
-cd ~
+$ cd {{ site.workshop_host_homedir }}/yourUserName
+$ cd ~
 ```
 {: .language-bash}
 
@@ -142,9 +142,9 @@ or base directory.
 Let's go there now, look around, and then return to our home directory.
 
 ```
-cd /
-ls
-cd ~
+$ cd /
+$ ls
+$ cd ~
 ```
 {: .language-bash}
 ```
