@@ -7,7 +7,7 @@ suitable for teaching the use of the shell for any remote, advanced computing re
 
 ## Using this material
 
-1. Follow the found in the [Software Carpentry example lesson source](https://github.com/carpentries/lesson-example/)
+1. Follow the instructions found in the [Software Carpentry example lesson source](https://github.com/carpentries/lesson-example/)
    to create a repository for your lesson.
 2. Edit [_config.yml](_config.yml) to modify the configuration options at the bottom for the
    remote host you will be using. These options set such things as the address of the host

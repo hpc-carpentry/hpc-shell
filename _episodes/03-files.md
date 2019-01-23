@@ -106,9 +106,7 @@ $ ls
 
 ## Moving and copying files
 
-To practice moving files, we will move `test.txt` to that directory with `mv` (move). `mv`'s syntax
-is relatively intuitive, and works for both files and directories `mv <file/directory> <path to new
-location>`
+To practice moving files, we will move `test.txt` to that directory with `mv` (move). `mv`'s syntax works for both files and directories `mv <file/directory> <path to new location>`
 
 ```
 $ mv test.txt files
@@ -283,10 +281,9 @@ SRR307030_2.fastq
 > We just unzipped a .tar.gz file for this example. What if we run into other file formats that we
 > need to unzip? Just use the handy reference below:
 >
-> * `gunzip` unzips .gz files
-> * `unzip` unzips .zip files
-> * `unrar` unzips .rar files (not available on many systems)
-> * `tar -xvf` unzips .tar.gz and .tar.bz2 files
+> * `gunzip` extracts the contents of .gz files
+> * `unzip` extracts the contents of .zip files
+> * `tar -xvf` extracts the contents of .tar.gz and .tar.bz2 files
 {: .callout}
 
 That is a lot of files! One of these files, `dmel-all-r6.19.gtf` is extremely large, and contains
