@@ -1,0 +1,26 @@
+
+The authenticity of host 'login.cirrus.ac.uk (129.215.175.28)' can't be established.
+ECDSA key fingerprint is SHA256:JRj286Pkqh6aeO5zx1QUkS8un5fpcapmezusceSGhok.
+ECDSA key fingerprint is MD5:99:59:db:b1:3f:18:d0:2c:49:4e:c2:74:86:ac:f7:c6.
+Are you sure you want to continue connecting (yes/no)?  # type "yes"!
+Warning: Permanently added the ECDSA host key for IP address '129.215.175.28' to the list of known hosts.
+yourUsername@login.cirrus.ac.uk's password:  # no text appears as you enter your password
+Last login: Wed Nov 28 08:46:30 2018 from cpc102380-sgyl38-2-0-cust601.18-2.cable.virginm.net
+
+================================================================================
+
+Cirrus HPC Service
+
+--------------------------------------------------------------------------------
+This is a private computing facility. Access to this system is limited to those
+who have been granted access by the operating service provider on behalf of the
+issuing authority and use is restricted to the purposes for which access was
+granted. All access and usage are governed by the terms and conditions of access
+agreed to by all registered users and are thus subject to the provisions of the
+Computer Misuse Act, 1990 under which unauthorised use is a criminal offence.
+--------------------------------------------------------------------------------
+
+For help please contact the Cirrus helpdesk at: 
+support@cirrus.ac.uk
+
+================================================================================

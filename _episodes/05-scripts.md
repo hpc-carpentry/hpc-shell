@@ -15,20 +15,20 @@ keypoints:
 ---
 
 We now know a lot of UNIX commands! Wouldn't it be great if we could save certain commands so that
-we could run them later or not have to type them out again? As it turns out, this is extremely easy
+we could run them later or not have to type them out again? As it turns out, this is straightforward
 to do. Saving a list of commands to a file is called a "shell script". These shell scripts can be
 run whenever we want, and are a great way to automate our work.
 
-So how do we write a shell script, exactly? It turns out we can do this with a simple text editor.
+So how do we write a shell script, exactly? It turns out we can do this with a text editor.
 Start editing a file called "demo.sh" (to recap, we can do this with `nano demo.sh`). The ".sh" is
-the standard file extension for shell scripts that most people use.
+the standard file extension for shell scripts that most people use (you may also see ".bash" used).
 
 Our shell script will have two parts:
 
 * On the very first line, add `#!/bin/bash`. The `#!` (pronounced "hash-bang") tells our computer
   what program to run our script with. In this case, we are telling it to run our script with our
   command-line shell (what we've been doing everything in so far). If we wanted our script to be run
-  with something else, like Python, we could add `#!/usr/bin/python3`
+  with something else, like Perl, we could add `#!/usr/bin/perl`
 * Now, anywhere below the first line, add `echo "Our script worked!"`. When our script runs, `echo`
   will happily print out `Our script worked!`.
 
@@ -57,8 +57,8 @@ bash: demo.sh: command not found...
 Strangely enough, Bash can't find our script. As it turns out, Bash will only look in certain
 directories for scripts to run. To run anything else, we need to tell Bash exactly where to look. To
 run a script that we wrote ourselves, we need to specify the full path to the file, followed by the
-filename. We could do this one of two ways: either with our absolute path `/home/jeff/demo.sh`, or
-with the relative path `./demo.sh`.
+filename. We could do this one of two ways: either with our absolute path
+`{{ site.workshop_host_homedir }}/yourUserName/demo.sh`, or with the relative path `./demo.sh`.
 
 ```
 $ ./demo.sh
@@ -79,28 +79,28 @@ $ ls -l
 {: .language-bash}
 
 ```
--rw-rw-r--. 1 jeff jeff 12534006 Jan 16 18:50 bash-lesson.tar.gz
--rw-rw-r--. 1 jeff jeff       40 Jan 16 19:41 demo.sh
--rw-rw-r--. 1 jeff jeff 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
--rw-r--r--. 1 jeff jeff   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
-drwxrwxr-x. 2 jeff jeff     4096 Jan 16 19:16 fastq
--rw-r--r--. 1 jeff jeff  1830516 Jan 25  2016 gene_association.fb.gz
--rw-rw-r--. 1 jeff jeff       15 Jan 16 19:17 test.txt
--rw-rw-r--. 1 jeff jeff      245 Jan 16 19:24 word_counts.txt
+-rw-rw-r--. 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
+-rw-rw-r--. 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
+-rw-rw-r--. 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
+-rw-r--r--. 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
+drwxrwxr-x. 2 yourUsername tc001     4096 Jan 16 19:16 fastq
+-rw-r--r--. 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
+-rw-rw-r--. 1 yourUsername tc001       15 Jan 16 19:17 test.txt
+-rw-rw-r--. 1 yourUsername tc001      245 Jan 16 19:24 word_counts.txt
 ```
 {: .output}
 
 That's a huge amount of output. Let's see if we can understand what it is, working left to right.
 
 + **1st column - Permissions:** On the very left side, there is a string of the characters `d`, `r`,
-  `w`, `x`, and `-`. The `d` simply indicates if something is a directory (there is a `-` in that
+  `w`, `x`, and `-`. The `d` indicates if something is a directory (there is a `-` in that
   spot if it is not a directory). The other `r`, `w`, `x` bits indicates permission to **R**ead
   **W**rite and e**X**ecute a file. There are three columns of `rwx` permissions following the spot
   for `d`. If a user is missing a permission to do something, it's indicated by a `-`.
     + The first column of `rwx` are the permissions that the owner has (in this case the owner is
-      `jeff`).
+      `yourUsername`).
     + The second set of `rwx`s are permissions that other members of the owner's group share (in
-      this case, the group is also named `jeff`).
+      this case, the group is named `tc001`).
     + The third set of `rwx`s are permissions that anyone else with access to this computer can do
       with a file. Though files are typically created with read permissions for everyone, typically
       the permissions on your home directory prevent others from being able to access the file in
@@ -126,14 +126,14 @@ $ ls -l
 {: .language-bash}
 
 ```
--rw-rw-r--. 1 jeff jeff 12534006 Jan 16 18:50 bash-lesson.tar.gz
--rwxrwxr-x. 1 jeff jeff       40 Jan 16 19:41 demo.sh
--rw-rw-r--. 1 jeff jeff 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
--rw-r--r--. 1 jeff jeff   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
-drwxrwxr-x. 2 jeff jeff     4096 Jan 16 19:16 fastq
--rw-r--r--. 1 jeff jeff  1830516 Jan 25  2016 gene_association.fb.gz
--rw-rw-r--. 1 jeff jeff       15 Jan 16 19:17 test.txt
--rw-rw-r--. 1 jeff jeff      245 Jan 16 19:24 word_counts.txt
+-rw-rw-r--. 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
+-rwxrwxr-x. 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
+-rw-rw-r--. 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
+-rw-r--r--. 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
+drwxrwxr-x. 2 yourUsername tc001     4096 Jan 16 19:16 fastq
+-rw-r--r--. 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
+-rw-rw-r--. 1 yourUsername tc001       15 Jan 16 19:17 test.txt
+-rw-rw-r--. 1 yourUsername tc001      245 Jan 16 19:24 word_counts.txt
 ```
 {: .output}
 
@@ -177,8 +177,8 @@ variables can store pretty much anything you can think of. In the shell, they us
 text. The best way to understand how they work is to see them in action.
 
 To set a variable, simply type in a name containing only letters, numbers, and underscores, followed
-by an `=` and whatever you want to put in the variable. Shell variable names are typically uppercase
-by convention.
+by an `=` and whatever you want to put in the variable. Shell variable names are often uppercase
+by convention (but do not have to be).
 
 ```
 $ VAR="This is our variable"
@@ -228,7 +228,7 @@ every time we want to use it? There is actually a special shell variable we can 
 allows us to use arguments in our scripts (arguments are extra information that we can pass to our
 script, like the `-l` in `wc -l`).
 
-To use the first argument to a script, simply use `$1` (the second argument is `$2`, and so on).
+To use the first argument to a script, use `$1` (the second argument is `$2`, and so on).
 Let's change our script to run `wc -l` on `$1` instead of `$FILE`. Note that we can also pass all of
 the arguments using `$@` (not going to use it in this lesson, but it's something to be aware of).
 
@@ -352,7 +352,7 @@ word_counts.txt
 ```
 {: .output}
 
-There's actually even a shortcut to run on all files of a particular type, say all .tsv files:
+There's actually even a shortcut to run on all files of a particular type, say all .gz files:
 
 ```
 #!/bin/bash
@@ -376,6 +376,22 @@ gene_association.fb.gz
 > of every fastq file in that directory.
 >
 > Is there a way to only run the loop on fastq files ending in `_1.fastq`?
+> > ## Solution
+> > 
+> > Create the following script in a file called `head_all.sh`
+> > ```
+> > #!/bin/bash
+> > 
+> > for FILE in *.fastq
+> > do
+> >    echo $FILE
+> >    head -n 4 $FILE
+> > done
+> > ```
+> > {: .language-bash}
+> >
+> > The "for" line could be modified to be `for FILE in *_1.fastq` to achieve the second aim
+> {: .solution}
 {: .challenge}
 
 > ## Concatenating variables
@@ -395,6 +411,34 @@ gene_association.fb.gz
 >
 > Can you write a script that prints off the name of every file in a directory with ".processed"
 > added to it?
+> > ## Solution
+> > 
+> > Create the following script in a file called `process.sh`
+> > ```
+> > #!/bin/bash
+> > 
+> > for FILE in *
+> > do
+> >    echo ${FILE}.processed
+> > done
+> > ```
+> > {: .language-bash}
+> >
+> > Note that this will also print directories appended with ".processed". To truely only get 
+> > files and not directories, we need to modify this to use the `find` command to give us only
+> > files in the current directory:
+> > ```
+> > #!/bin/bash
+> > 
+> > for FILE in $(find . -max-depth 1 -type f)
+> > do
+> >    echo ${FILE}.processed
+> > done
+> > ```
+> > {: .language-bash}
+> >
+> > but this will have the side-effect of listing hidden files too.
+> {: .solution}
 {: .challenge}
 
 
@@ -417,4 +461,14 @@ gene_association.fb.gz
 >
 > How might we give ourselves permission to do everything with a file, but allow no one else to do
 > anything with it.
+> > ## Solution
+> >
+> > ```
+> > chmod 700 example
+> > ```
+> > {: .language-bash}
+> >
+> > We want all permissions so: 4 (read) + 2 (write) + 1 (execute) = 7 for user (first position),
+> > no permissions, i.e. 0, for group (second position) and all (third position). 
+> {: .solution}
 {: .challenge}

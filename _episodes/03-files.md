@@ -21,9 +21,10 @@ $ cd ~
 {: .language-bash}
 
 What if we want to make a file? There are a few ways of doing this, the easiest of which is simply
-using a text editor. For this lesson, we are going to us `nano`, since it's super easy to use.
+using a text editor. For this lesson, we are going to us `nano`, since it's more intuitive than many
+other terminal text editors.
 
-To use `nano` on a file, simply type `nano filename`. If the file does not exist, it will be
+To use `nano` on a file, type `nano filename`. If the file does not exist, it will be
 created. `^O` (Ctrl + O) saves the file, and `^X` quits. If you have not saved your file upon trying
 to quit, it will ask you if you want to save.
 
@@ -52,7 +53,7 @@ nano test.txt
 ```
 {: .language-bash}
 
-![Nano in action](/fig/nano-screenshot.png)
+![Nano in action]({{ site.url }}{{ site.baseurl }}/fig/nano-screenshot.png)
 
 Do a quick check to confirm our file was created.
 
@@ -66,8 +67,8 @@ test.txt
 ```
 {: .output}
 
-Let's read our file now. There are a few different ways of doing this, the simplest of which is
-simply reading the entire file with `cat`.
+Let's read our file now. There are a few different ways of doing this, one of which is
+reading the entire file with `cat`.
 
 ```
 $ cat test.txt
@@ -105,9 +106,7 @@ $ ls
 
 ## Moving and copying files
 
-To practice moving files, we will move `test.txt` to that directory with `mv` (move). `mv`'s syntax
-is relatively simple, and works for both files and directories `mv <file/directory> <path to new
-location>`
+To practice moving files, we will move `test.txt` to that directory with `mv` (move). `mv`'s syntax works for both files and directories `mv <file/directory> <path to new location>`
 
 ```
 $ mv test.txt files
@@ -192,12 +191,13 @@ files Documents
 ```
 {: .output}
 
-That was simple enough. Directories are deleted in a similar manner using `rmdir`.
+That was simple enough. Directories are deleted in a similar manner using `rm -r` (the `-r` option
+stands for 'recursive').
 
 ```
 $ ls
-$ rmdir Documents
-$ rmdir files
+$ rm -r Documents
+$ rm -r files
 $ ls
 ```
 {: .language-bash}
@@ -241,7 +241,7 @@ Let's grab and unpack a set of demo files for use later. To do this, we'll use `
 downloads a file from a link).
 
 ```
-wget {{site.url}}/hpc-shell/files/bash-lesson.tar.gz
+$ wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 ```
 {: .language-bash}
 
@@ -249,7 +249,7 @@ You'll commonly encounter `.tar.gz` archives while working in UNIX. To extract t
 `.tar.gz` file, we run the command `tar -xvf filename.tar.gz`:
 
 ```
-tar -xvf bash-lesson.tar.gz
+$ tar -xvf bash-lesson.tar.gz
 ```
 {: .language-bash}
 
@@ -281,10 +281,9 @@ SRR307030_2.fastq
 > We just unzipped a .tar.gz file for this example. What if we run into other file formats that we
 > need to unzip? Just use the handy reference below:
 >
-> * `gunzip` unzips .gz files
-> * `unzip` unzips .zip files
-> * `unrar` unzips .rar files
-> * `tar -xvf` unzips .tar.gz and .tar.bz2 files
+> * `gunzip` extracts the contents of .gz files
+> * `unzip` extracts the contents of .zip files
+> * `tar -xvf` extracts the contents of .tar.gz and .tar.bz2 files
 {: .callout}
 
 That is a lot of files! One of these files, `dmel-all-r6.19.gtf` is extremely large, and contains
