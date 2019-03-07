@@ -88,10 +88,10 @@ enter or clicking the "Open" button should begin the connection process.
 If this works you will see a terminal window open that prompts you for a username through the "login
 as:" prompt and then for a password. If both of these are passed correctly then you will be given
 access to the system and will see a message saying so within the terminal. If you need to escape the
-authentication process you can hold the control/Ctrl key and press the c key to exit and start
-again.
+authentication process you can hold the Control (<kbd>Ctrl</kbd>) key and press the <kbd>c</kbd> key
+to exit and start again.
 
-Note that you may want to paste in your password rather than typing it. Use control/Ctrl plus a
+Note that you may want to paste in your password rather than typing it. Use <kbd>Ctrl</kbd> plus a
 right-click of the mouse to paste content from the clipboard to the PuTTY terminal.
 
 For those logging in with PuTTY it would likely be best to cover the terminal basics already
@@ -100,7 +100,7 @@ mentioned above before moving on to navigating the remote system.
 ## Logging onto the system
 
 With all of this in mind, let's connect to a remote HPC system. In this workshop, we will connect to
-{{ site.workshop_host }} - an HPC system located at the {{ site.workshop_host_location}}. Although it's unlikely
+{{ site.workshop_host }} --- an HPC system located at the {{ site.workshop_host_location}}. Although it's unlikely
 that every system will be exactly like {{ site.workshop_host }}, it's a very good example of what you can expect from
 an HPC installation. To connect to our example computer, we will use SSH (if you are using
 PuTTY, see above).
@@ -141,7 +141,7 @@ adopt the following convention:
 - `{{ site.workshop_host_prompt }}` when the command is to be entered on a terminal connected to the remote system
 - `$` when it really doesn't matter which system the terminal is connected to.
 
-> ## Being Certain Which System your Terminal is connected to
+> ## Being Certain Which System your Terminal is Connected to
 >
 > If you ever need to be certain which system a terminal you are using is connected to then use the
 > following command: `$ hostname`.
