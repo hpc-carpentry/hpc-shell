@@ -57,15 +57,15 @@ from [mobatek.net](https://mobaxterm.mobatek.net/download-home-edition.html). If
 you will note that there are two editions of the home version available: Portable and Installer. The
 portable edition puts all MobaXterm content in a folder on the desktop (or anywhere else you would
 like it) so that it is easy add plug-ins or remove the software. The installer edition adds
-MobaXterm to your Windows installation as any other program you might install. If you are not sure
-that you will continue to use MobaXterm in the future you are likely best to choose the portable
-edition.
+MobaXterm to your Windows installation and menu as any other program you might install.
+If you are not sure that you will continue to use MobaXterm in the future, the portable edition
+is likely the best choice for you.
 
 Download the version that you would like to use and install it as you would any other software on
 your Windows installation. Once the software is installed you can run it by either opening the
-folder installed with the portable edition and double-clicking on the file named
-*MobaXterm_Personal_10.2* or, if the installer edition was used, finding the executable through
-either the start menu or the Windows search option.
+folder installed with the portable edition and double-clicking on the executable file named
+`MobaXterm_Personal_11.1` (your version number may vary) or, if the installer edition was used,
+finding the executable through either the start menu or the Windows search option.
 
 Once the MobaXterm window is open you should see a large button in the middle of that window with
 the text "Start Local Terminal". Click this button and you will have a terminal window at your
