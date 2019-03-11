@@ -100,7 +100,7 @@ mentioned above before moving on to navigating the remote system.
 ## Logging onto the system
 
 With all of this in mind, let's connect to a remote HPC system. In this workshop, we will connect to
-{{ site.workshop_host }} --- an HPC system located at the {{ site.workshop_host_location}}. Although it's unlikely
+{{ site.workshop_host }} --- an HPC system located at the {{ site.workshop_host_location }}. Although it's unlikely
 that every system will be exactly like {{ site.workshop_host }}, it's a very good example of what you can expect from
 an HPC installation. To connect to our example computer, we will use SSH (if you are using
 PuTTY, see above).
