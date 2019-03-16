@@ -141,13 +141,13 @@ adopt the following convention:
 - `{{ site.workshop_host_prompt }}` when the command is to be entered on a terminal connected to the remote system
 - `$` when it really doesn't matter which system the terminal is connected to.
 
-> ## Being Certain Which System your Terminal is Connected to
+> ## Being certain which system your terminal is connected to
 >
 > If you ever need to be certain which system a terminal you are using is connected to then use the
 > following command: `$ hostname`.
 {: .callout}
 
-> ## Keep Two Terminal Windows Open
+> ## Keep two terminal windows open
 >
 > It is strongly recommended that you have two terminals open, one connected to the local system and
 > one connected to the remote system, that you can switch back and forth between. If you only use
