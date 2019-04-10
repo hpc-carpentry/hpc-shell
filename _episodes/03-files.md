@@ -107,7 +107,8 @@ $ cat test.txt
 {: .language-bash}
 
 ```
-This is the contents of our test file.
+It's not "publish or perish" any more,
+it's "share and thrive".
 ```
 {: .output}
 
@@ -121,8 +122,10 @@ $ cat test.txt test.txt
 {: .language-bash}
 
 ```
-This is the contents of our test file.
-This is the contents of our test file.
+It's not "publish or perish" any more,
+it's "share and thrive".
+It's not "publish or perish" any more,
+it's "share and thrive".
 ```
 {: .output}
 
