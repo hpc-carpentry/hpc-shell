@@ -141,6 +141,9 @@ it's "share and thrive".
 > `chap1.txt`, and `chap2.txt`.
 {: .challenge}
 
+
+## Creating Directory
+
 We've successfully created a file. What about a directory? We've actually done this before, using
 `mkdir`.
 
@@ -149,6 +152,10 @@ $ mkdir files
 $ ls
 ```
 {: .language-bash}
+```
+draft.txt  files
+```
+{: .output}
 
 ## Moving and copying files
 
