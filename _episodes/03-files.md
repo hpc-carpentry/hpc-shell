@@ -157,9 +157,11 @@ draft.txt  files
 ```
 {: .output}
 
-## Moving and copying files
 
-To practice moving files, we will move `draft.txt` to that directory with `mv` (move). `mv`'s syntax works for both files and directories `mv <file/directory> <path to new location>`
+## Moving, Renaming, Copying Files
+
+**Moving**---We will move `draft.txt` to the `files` directory with `mv` ("move") command.
+The same syntax works for both files and directories: `mv <file/directory> <new-location>`
 
 ```
 $ mv draft.txt files
@@ -172,10 +174,9 @@ draft.txt
 ```
 {: .output}
 
-`draft.txt` isn't a very descriptive name. How do we go about changing it?
-
-It turns out that the way to rename files and folders is with `mv` again. Although this may not seem
-intuitive at first, think of it as moving a file to be stored under a different name. The syntax is
+**Renaming**---`draft.txt` isn't a very descriptive name. How do we go about changing it?
+It turns out that `mv` is also used to rename files and directories. Although this may not seem
+intuitive at first, think of it as *moving* a file to be stored under a different name. The syntax is
 quite similar to moving files: `mv oldName newName`.
 
 ```
@@ -198,8 +199,8 @@ newname.testfile
 > for instance.
 {: .callout}
 
-What if we want to copy a file, instead of simply renaming or moving it? Use `cp` (an abbreviated
-name for "copy"). This command has to different uses that work in the same way as `mv`:
+**Copying**---What if we want to copy a file, instead of simply renaming or moving it?
+Use `cp` command (an abbreviated name for "copy"). This command has to different uses that work in the same way as `mv`:
 
 - Copy to same directory (copied file is renamed): `cp file newFilename`
 - Copy to other directory (copied file retains original name): `cp file directory`
