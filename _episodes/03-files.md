@@ -39,7 +39,7 @@ What if we want to make a file? There are a few ways of doing this, the easiest 
 using a text editor. For this lesson, we are going to us `nano`, since it's more intuitive than many
 other terminal text editors.
 
-To create or edit a file, type `nano filename`, on the terminal, where `filename` is the name of the
+To create or edit a file, type `nano <filename>`, on the terminal, where `<filename>` is the name of the
 file.  If the file does not already exist, it will be created.
 Let's make a new file now, type whatever you want in it, and save it.
 
@@ -98,7 +98,10 @@ draft.txt
 ```
 {: .output}
 
-Let's read our file now. There are a few different ways of doing this, one of which is
+
+## Reading Files
+
+Let's read the file we just created now. There are a few different ways of doing this, one of which is
 reading the entire file with `cat`.
 
 ```
@@ -112,9 +115,11 @@ it's "share and thrive".
 ```
 {: .output}
 
-Although `cat` may not seem like an intuitive command with which to open files, it stands for
-"concatenate"- giving it multiple arguments will print out one file followed by the contents of the
-next, and so on.
+By default, `cat` prints out the content of the given file.
+Although `cat` may not seem like an intuitive command with which to read files, it stands for
+"concatenate". Giving it multiple file names will print out the contents of the input files in the order
+specified in the `cat`'s invocation.
+For example,
 
 ```
 $ cat draft.txt draft.txt
@@ -128,6 +133,13 @@ It's not "publish or perish" any more,
 it's "share and thrive".
 ```
 {: .output}
+
+> ## Reading Multiple Text Files
+>
+> Create two more files using `nano`, giving them different names such as `chap1.txt` and
+> `chap2.txt`. Then use a single `cat` command to read and print the contents of `draft.txt`,
+> `chap1.txt`, and `chap2.txt`.
+{: .challenge}
 
 We've successfully created a file. What about a directory? We've actually done this before, using
 `mkdir`.
