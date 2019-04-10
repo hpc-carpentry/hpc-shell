@@ -10,7 +10,7 @@
 carpentry: "swc"
 
 # Overall title for pages.
-title: "Introduction to using the shell in a High-Performance Computing context"
+title: "Introduction to Using Shell in a High-Performance Computing Cluster"
 
 # Life cycle stage of the lesson
 # possible values: "pre-alpha", "alpha", "beta", "stable"
