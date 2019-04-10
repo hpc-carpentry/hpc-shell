@@ -3,13 +3,20 @@ title: Writing and reading files
 teaching: 30
 exercises: 15
 questions:
-- "How do I create/move/delete files?"
-- "How do I edit files?"
+- "How do I create/edit text files?"
+- "How do I move/copy/delete files?"
 objectives:
 - "Learn to use the `nano` text editor."
 - "Understand how to move, create, and delete files."
 keypoints:
-- "File extensions are entirely arbitrary."
+- "Use `nano` to create or edit text files from a terminal."
+- "`cat file1 [file2 ...]` prints the contents of one or more files to terminal."
+- "`mv old dir` moves a file or directory to another directory `dir`."
+- "`mv old new` renames a file or directory."
+- "`cp old new` copies a file."
+- "`cp old dir` copies a file to another directory `dir`."
+- "`rm path` deletes (removes) a file."
+- "File extensions are entirely arbitrary on UNIX systems."
 ---
 
 Now that we know how to move around and look at things, let's learn how to read, write, and handle
