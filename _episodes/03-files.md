@@ -44,7 +44,7 @@ file.  If the file does not already exist, it will be created.
 Let's make a new file now, type whatever you want in it, and save it.
 
 ```
-$ nano test.txt
+$ nano draft.txt
 ```
 {: .language-bash}
 
@@ -94,7 +94,7 @@ $ ls
 {: .language-bash}
 
 ```
-test.txt
+draft.txt
 ```
 {: .output}
 
@@ -102,7 +102,7 @@ Let's read our file now. There are a few different ways of doing this, one of wh
 reading the entire file with `cat`.
 
 ```
-$ cat test.txt
+$ cat draft.txt
 ```
 {: .language-bash}
 
@@ -117,7 +117,7 @@ Although `cat` may not seem like an intuitive command with which to open files, 
 next, and so on.
 
 ```
-$ cat test.txt test.txt
+$ cat draft.txt draft.txt
 ```
 {: .language-bash}
 
@@ -140,27 +140,27 @@ $ ls
 
 ## Moving and copying files
 
-To practice moving files, we will move `test.txt` to that directory with `mv` (move). `mv`'s syntax works for both files and directories `mv <file/directory> <path to new location>`
+To practice moving files, we will move `draft.txt` to that directory with `mv` (move). `mv`'s syntax works for both files and directories `mv <file/directory> <path to new location>`
 
 ```
-$ mv test.txt files
+$ mv draft.txt files
 $ cd files
 $ ls
 ```
 {: .language-bash}
 ```
-test.txt
+draft.txt
 ```
 {: .output}
 
-`test.txt` isn't a very descriptive name. How do we go about changing it?
+`draft.txt` isn't a very descriptive name. How do we go about changing it?
 
 It turns out that the way to rename files and folders is with `mv` again. Although this may not seem
 intuitive at first, think of it as moving a file to be stored under a different name. The syntax is
 quite similar to moving files: `mv oldName newName`.
 
 ```
-$ mv test.txt newname.testfile
+$ mv draft.txt newname.testfile
 $ ls
 ```
 {: .language-bash}
