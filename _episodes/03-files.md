@@ -20,10 +20,12 @@ keypoints:
 ---
 
 Now that we know how to move around and look at things, let's learn how to read, write, and handle
-files! We'll start by moving back to our home directory:
+files! We'll start by moving back to our home directory and creating a scratch directory:
 
 ```
 $ cd ~
+$ mkdir hpc-test
+$ cd hpc-test
 ```
 {: .language-bash}
 
