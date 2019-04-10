@@ -29,13 +29,44 @@ $ cd hpc-test
 ```
 {: .language-bash}
 
+
+## Creating and Editing Text Files
+
+When working on an HPC system, we will frequently need to create or edit text files.
+Text is one of the simplest computer file formats, defined as a simple sequence of text lines.
+
 What if we want to make a file? There are a few ways of doing this, the easiest of which is simply
 using a text editor. For this lesson, we are going to us `nano`, since it's more intuitive than many
 other terminal text editors.
 
-To use `nano` on a file, type `nano filename`. If the file does not exist, it will be
-created. `^O` (Ctrl + O) saves the file, and `^X` quits. If you have not saved your file upon trying
-to quit, it will ask you if you want to save.
+To create or edit a file, type `nano filename`, on the terminal, where `filename` is the name of the
+file.  If the file does not already exist, it will be created.
+Let's make a new file now, type whatever you want in it, and save it.
+
+```
+$ nano test.txt
+```
+{: .language-bash}
+
+![Nano in action]({{ site.url }}{{ site.baseurl }}/fig/nano-screenshot.png)
+
+Nano defines a number of *shortcut keys* (prefixed by the <kbd>Control</kbd> or <kbd>Ctrl</kbd> key)
+to perform actions such as saving the file or exiting the editor.
+Here are the shortcut keys for a few common actions:
+
+* <kbd>Ctrl</kbd>+<kbd>O</kbd> --- save the file (into a current name or a new name).
+
+* <kbd>Ctrl</kbd>+<kbd>X</kbd> --- exit the editor.
+  If you have not saved your file upon exiting, `nano` will ask you if you want to save.
+
+* <kbd>Ctrl</kbd>+<kbd>K</kbd> --- cut ("kill") a text line.
+  This command deletes a line and saves it on a clipboard.
+  If repeated multiple times without any interruption (key typing or cursor movement),
+  it will cut a chunk of text lines.
+
+* <kbd>Ctrl</kbd>+<kbd>U</kbd> --- paste the cut text line (or lines).
+  This command can be repeated to paste the same text elsewhere.
+
 
 > ## Using `vim` as a text editor
 >
@@ -49,20 +80,11 @@ to quit, it will ask you if you want to save.
 > In insert mode, you can type more or less normally. In command mode there are a few commands you
 > should be aware of:
 >
-> * `:q!` - quit, without saving
-> * `:wq` - save and quit
-> * `dd` - cut/delete a line
-> * `y` - paste a line
+> * `:q!` --- quit, without saving
+> * `:wq` --- save and quit
+> * `dd` --- cut/delete a line
+> * `y` --- paste a line
 {: .callout}
-
-Let's make a new file now, type whatever you want in it, and save it.
-
-```
-nano test.txt
-```
-{: .language-bash}
-
-![Nano in action]({{ site.url }}{{ site.baseurl }}/fig/nano-screenshot.png)
 
 Do a quick check to confirm our file was created.
 
