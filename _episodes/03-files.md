@@ -200,7 +200,7 @@ newname.testfile
 {: .callout}
 
 **Copying**---What if we want to copy a file, instead of simply renaming or moving it?
-Use `cp` command (an abbreviated name for "copy"). This command has to different uses that work in the same way as `mv`:
+Use `cp` command (an abbreviated name for "copy"). This command has two different uses that work in the same way as `mv`:
 
 - Copy to same directory (copied file is renamed): `cp file newFilename`
 - Copy to other directory (copied file retains original name): `cp file directory`
