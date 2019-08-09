@@ -11,9 +11,9 @@ objectives:
 keypoints:
 - "High Performance Computing (HPC) typically involves connecting to very large computing systems
   elsewhere in the world."
-- "These other systems can be used to do work that would either be impossible or much slower or
+- "These HPC systems can be used to do work that would either be impossible or much slower or
   smaller systems."
-- "The standard method of interacting with such systems is via a command line interface called
+- "The standard method of interacting with such systems is via a command line interface such as
   Bash."
 ---
 

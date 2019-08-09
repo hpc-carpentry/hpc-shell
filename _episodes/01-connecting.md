@@ -35,8 +35,9 @@ but a very fast way is to use the terminal shortcut key sequence: Ctrl+Alt+T.
 
 ### Mac
 
-Macs have had a terminal built in since the first version of OSX since it is built on a Linux
-flavour known as BSD (Berkeley Systems Designs). The terminal can be quickly opened through the use
+Macs have had a terminal built in since the first version of OS X since it is
+built on a UNIX-like operating system, leveraging many parts from BSD (Berkeley Systems Designs).
+The terminal can be quickly opened through the use
 of the Searchlight tool. Hold down the command key and press the spacebar. In the search bar that
 shows up type "terminal", choose the terminal app from the list of results (it will look like a
 tiny, black computer screen) and you will be presented with a terminal window. Alternatively, you
@@ -56,15 +57,15 @@ from [mobatek.net](https://mobaxterm.mobatek.net/download-home-edition.html). If
 you will note that there are two editions of the home version available: Portable and Installer. The
 portable edition puts all MobaXterm content in a folder on the desktop (or anywhere else you would
 like it) so that it is easy add plug-ins or remove the software. The installer edition adds
-MobaXterm to your Windows installation as any other program you might install. If you are not sure
-that you will continue to use MobaXterm in the future you are likely best to choose the portable
-edition.
+MobaXterm to your Windows installation and menu as any other program you might install.
+If you are not sure that you will continue to use MobaXterm in the future, the portable edition
+is likely the best choice for you.
 
 Download the version that you would like to use and install it as you would any other software on
 your Windows installation. Once the software is installed you can run it by either opening the
-folder installed with the portable edition and double-clicking on the file named
-*MobaXterm_Personal_10.2* or, if the installer edition was used, finding the executable through
-either the start menu or the Windows search option.
+folder installed with the portable edition and double-clicking on the executable file named
+`MobaXterm_Personal_11.1` (your version number may vary) or, if the installer edition was used,
+finding the executable through either the start menu or the Windows search option.
 
 Once the MobaXterm window is open you should see a large button in the middle of that window with
 the text "Start Local Terminal". Click this button and you will have a terminal window at your
@@ -87,10 +88,10 @@ enter or clicking the "Open" button should begin the connection process.
 If this works you will see a terminal window open that prompts you for a username through the "login
 as:" prompt and then for a password. If both of these are passed correctly then you will be given
 access to the system and will see a message saying so within the terminal. If you need to escape the
-authentication process you can hold the control/Ctrl key and press the c key to exit and start
-again.
+authentication process you can hold the Control (<kbd>Ctrl</kbd>) key and press the <kbd>c</kbd> key
+to exit and start again.
 
-Note that you may want to paste in your password rather than typing it. Use control/Ctrl plus a
+Note that you may want to paste in your password rather than typing it. Use <kbd>Ctrl</kbd> plus a
 right-click of the mouse to paste content from the clipboard to the PuTTY terminal.
 
 For those logging in with PuTTY it would likely be best to cover the terminal basics already
@@ -99,7 +100,7 @@ mentioned above before moving on to navigating the remote system.
 ## Logging onto the system
 
 With all of this in mind, let's connect to a remote HPC system. In this workshop, we will connect to
-{{ site.workshop_host }} - an HPC system located at the {{ site.workshop_host_location}}. Although it's unlikely
+{{ site.workshop_host }} --- an HPC system located at the {{ site.workshop_host_location }}. Although it's unlikely
 that every system will be exactly like {{ site.workshop_host }}, it's a very good example of what you can expect from
 an HPC installation. To connect to our example computer, we will use SSH (if you are using
 PuTTY, see above).
@@ -140,13 +141,13 @@ adopt the following convention:
 - `{{ site.workshop_host_prompt }}` when the command is to be entered on a terminal connected to the remote system
 - `$` when it really doesn't matter which system the terminal is connected to.
 
-> ## Being Certain Which System your Terminal is connected to
+> ## Being certain which system your terminal is connected to
 >
 > If you ever need to be certain which system a terminal you are using is connected to then use the
 > following command: `$ hostname`.
 {: .callout}
 
-> ## Keep Two Terminal Windows Open
+> ## Keep two terminal windows open
 >
 > It is strongly recommended that you have two terminals open, one connected to the local system and
 > one connected to the remote system, that you can switch back and forth between. If you only use

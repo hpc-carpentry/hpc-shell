@@ -3,30 +3,70 @@ title: Writing and reading files
 teaching: 30
 exercises: 15
 questions:
-- "How do I create/move/delete files?"
-- "How do I edit files?"
+- "How do I create/edit text files?"
+- "How do I move/copy/delete files?"
 objectives:
 - "Learn to use the `nano` text editor."
 - "Understand how to move, create, and delete files."
 keypoints:
-- "File extensions are entirely arbitrary."
+- "Use `nano` to create or edit text files from a terminal."
+- "`cat file1 [file2 ...]` prints the contents of one or more files to terminal."
+- "`mv old dir` moves a file or directory to another directory `dir`."
+- "`mv old new` renames a file or directory."
+- "`cp old new` copies a file."
+- "`cp old dir` copies a file to another directory `dir`."
+- "`rm path` deletes (removes) a file."
+- "File extensions are entirely arbitrary on UNIX systems."
 ---
 
 Now that we know how to move around and look at things, let's learn how to read, write, and handle
-files! We'll start by moving back to our home directory:
+files! We'll start by moving back to our home directory and creating a scratch directory:
 
 ```
 $ cd ~
+$ mkdir hpc-test
+$ cd hpc-test
 ```
 {: .language-bash}
+
+
+## Creating and Editing Text Files
+
+When working on an HPC system, we will frequently need to create or edit text files.
+Text is one of the simplest computer file formats, defined as a simple sequence of text lines.
 
 What if we want to make a file? There are a few ways of doing this, the easiest of which is simply
 using a text editor. For this lesson, we are going to us `nano`, since it's more intuitive than many
 other terminal text editors.
 
-To use `nano` on a file, type `nano filename`. If the file does not exist, it will be
-created. `^O` (Ctrl + O) saves the file, and `^X` quits. If you have not saved your file upon trying
-to quit, it will ask you if you want to save.
+To create or edit a file, type `nano <filename>`, on the terminal, where `<filename>` is the name of the
+file.  If the file does not already exist, it will be created.
+Let's make a new file now, type whatever you want in it, and save it.
+
+```
+$ nano draft.txt
+```
+{: .language-bash}
+
+![Nano in action]({{ site.url }}{{ site.baseurl }}/fig/nano-screenshot.png)
+
+Nano defines a number of *shortcut keys* (prefixed by the <kbd>Control</kbd> or <kbd>Ctrl</kbd> key)
+to perform actions such as saving the file or exiting the editor.
+Here are the shortcut keys for a few common actions:
+
+* <kbd>Ctrl</kbd>+<kbd>O</kbd> --- save the file (into a current name or a new name).
+
+* <kbd>Ctrl</kbd>+<kbd>X</kbd> --- exit the editor.
+  If you have not saved your file upon exiting, `nano` will ask you if you want to save.
+
+* <kbd>Ctrl</kbd>+<kbd>K</kbd> --- cut ("kill") a text line.
+  This command deletes a line and saves it on a clipboard.
+  If repeated multiple times without any interruption (key typing or cursor movement),
+  it will cut a chunk of text lines.
+
+* <kbd>Ctrl</kbd>+<kbd>U</kbd> --- paste the cut text line (or lines).
+  This command can be repeated to paste the same text elsewhere.
+
 
 > ## Using `vim` as a text editor
 >
@@ -40,20 +80,11 @@ to quit, it will ask you if you want to save.
 > In insert mode, you can type more or less normally. In command mode there are a few commands you
 > should be aware of:
 >
-> * `:q!` - quit, without saving
-> * `:wq` - save and quit
-> * `dd` - cut/delete a line
-> * `y` - paste a line
+> * `:q!` --- quit, without saving
+> * `:wq` --- save and quit
+> * `dd` --- cut/delete a line
+> * `y` --- paste a line
 {: .callout}
-
-Let's make a new file now, type whatever you want in it, and save it.
-
-```
-nano test.txt
-```
-{: .language-bash}
-
-![Nano in action]({{ site.url }}{{ site.baseurl }}/fig/nano-screenshot.png)
 
 Do a quick check to confirm our file was created.
 
@@ -63,37 +94,55 @@ $ ls
 {: .language-bash}
 
 ```
-test.txt
+draft.txt
 ```
 {: .output}
 
-Let's read our file now. There are a few different ways of doing this, one of which is
+
+## Reading Files
+
+Let's read the file we just created now. There are a few different ways of doing this, one of which is
 reading the entire file with `cat`.
 
 ```
-$ cat test.txt
+$ cat draft.txt
 ```
 {: .language-bash}
 
 ```
-This is the contents of our test file.
+It's not "publish or perish" any more,
+it's "share and thrive".
 ```
 {: .output}
 
-Although `cat` may not seem like an intuitive command with which to open files, it stands for
-"concatenate"- giving it multiple arguments will print out one file followed by the contents of the
-next, and so on.
+By default, `cat` prints out the content of the given file.
+Although `cat` may not seem like an intuitive command with which to read files, it stands for
+"concatenate". Giving it multiple file names will print out the contents of the input files in the order
+specified in the `cat`'s invocation.
+For example,
 
 ```
-$ cat test.txt test.txt
+$ cat draft.txt draft.txt
 ```
 {: .language-bash}
 
 ```
-This is the contents of our test file.
-This is the contents of our test file.
+It's not "publish or perish" any more,
+it's "share and thrive".
+It's not "publish or perish" any more,
+it's "share and thrive".
 ```
 {: .output}
+
+> ## Reading Multiple Text Files
+>
+> Create two more files using `nano`, giving them different names such as `chap1.txt` and
+> `chap2.txt`. Then use a single `cat` command to read and print the contents of `draft.txt`,
+> `chap1.txt`, and `chap2.txt`.
+{: .challenge}
+
+
+## Creating Directory
 
 We've successfully created a file. What about a directory? We've actually done this before, using
 `mkdir`.
@@ -103,30 +152,35 @@ $ mkdir files
 $ ls
 ```
 {: .language-bash}
+```
+draft.txt  files
+```
+{: .output}
 
-## Moving and copying files
 
-To practice moving files, we will move `test.txt` to that directory with `mv` (move). `mv`'s syntax works for both files and directories `mv <file/directory> <path to new location>`
+## Moving, Renaming, Copying Files
+
+**Moving**---We will move `draft.txt` to the `files` directory with `mv` ("move") command.
+The same syntax works for both files and directories: `mv <file/directory> <new-location>`
 
 ```
-$ mv test.txt files
+$ mv draft.txt files
 $ cd files
 $ ls
 ```
 {: .language-bash}
 ```
-test.txt
+draft.txt
 ```
 {: .output}
 
-`test.txt` isn't a very descriptive name. How do we go about changing it?
-
-It turns out that the way to rename files and folders is with `mv` again. Although this may not seem
-intuitive at first, think of it as moving a file to be stored under a different name. The syntax is
+**Renaming**---`draft.txt` isn't a very descriptive name. How do we go about changing it?
+It turns out that `mv` is also used to rename files and directories. Although this may not seem
+intuitive at first, think of it as *moving* a file to be stored under a different name. The syntax is
 quite similar to moving files: `mv oldName newName`.
 
 ```
-$ mv test.txt newname.testfile
+$ mv draft.txt newname.testfile
 $ ls
 ```
 {: .language-bash}
@@ -145,8 +199,8 @@ newname.testfile
 > for instance.
 {: .callout}
 
-What if we want to copy a file, instead of simply renaming or moving it? Use `cp` (an abbreviated
-name for "copy"). This command has to different uses that work in the same way as `mv`:
+**Copying**---What if we want to copy a file, instead of simply renaming or moving it?
+Use `cp` command (an abbreviated name for "copy"). This command has two different uses that work in the same way as `mv`:
 
 - Copy to same directory (copied file is renamed): `cp file newFilename`
 - Copy to other directory (copied file retains original name): `cp file directory`

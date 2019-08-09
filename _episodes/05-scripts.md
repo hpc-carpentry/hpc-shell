@@ -16,8 +16,12 @@ keypoints:
 
 We now know a lot of UNIX commands! Wouldn't it be great if we could save certain commands so that
 we could run them later or not have to type them out again? As it turns out, this is straightforward
-to do. Saving a list of commands to a file is called a "shell script". These shell scripts can be
+to do. A "shell script" is essentially a text file containing a list of UNIX commands to be
+executed in a sequential manner. These shell scripts can be
 run whenever we want, and are a great way to automate our work.
+
+
+## Writing a Script
 
 So how do we write a shell script, exactly? It turns out we can do this with a text editor.
 Start editing a file called "demo.sh" (to recap, we can do this with `nano demo.sh`). The ".sh" is
