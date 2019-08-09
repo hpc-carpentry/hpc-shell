@@ -21,10 +21,10 @@ keypoints:
 > If you didn't get them in the last lesson, make sure to download the example files used in the
 > next few sections:
 > 
-> **Using wget** - `wget {{site.url}}{{site.baseurl}}/bash-lesson.tar.gz`
+> **Using wget** - `wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz`
 >
 > **Using a web browser** -
-> [{{site.url}}{{site.baseurl}}/bash-lesson.tar.gz]({{site.url}}{{site.baseurl}}/bash-lesson.tar.gz)
+> [{{site.url}}{{site.baseurl}}/bash-lesson.tar.gz]({{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz)
 {: .testimonial}
 
 Now that we know some of the basic UNIX commands, we are going to explore some more advanced
