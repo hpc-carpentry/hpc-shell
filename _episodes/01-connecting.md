@@ -74,7 +74,7 @@ disposal.
 #### PuTTY
 
 It is strictly speaking not necessary to have a terminal running on your local computer in order to
-access and use a remote system, only a window into the remote system once connected. PuTTy is likely
+access and use a remote system, only a window into the remote system once connected. PuTTY is likely
 the oldest, most well-known, and widely used software solution to take this approach.
 
 PuTTY is available for free download from [www.putty.org](http://www.putty.org/). Download the
