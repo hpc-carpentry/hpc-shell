@@ -159,7 +159,7 @@ we want. Comments do not get run. Let's try out some comments in the console, th
 script!
 
 ```
-# This wont show anything
+# This won't show anything.
 ```
 
 Now lets try adding this to our script with `nano`. Edit your script to look something like this:
@@ -428,7 +428,7 @@ gene_association.fb.gz
 > > ```
 > > {: .language-bash}
 > >
-> > Note that this will also print directories appended with ".processed". To truely only get 
+> > Note that this will also print directories appended with ".processed". To truly only get 
 > > files and not directories, we need to modify this to use the `find` command to give us only
 > > files in the current directory:
 > > ```
