@@ -36,7 +36,7 @@ but a very fast way is to use the terminal shortcut key sequence: Ctrl+Alt+T.
 ### Mac
 
 Macs have had a terminal built in since the first version of OS X since it is
-built on a UNIX-like operating system, leveraging many parts from BSD (Berkeley Systems Designs).
+built on a UNIX-like operating system, leveraging many parts from BSD (Berkeley Software Distribution).
 The terminal can be quickly opened through the use
 of the Searchlight tool. Hold down the command key and press the spacebar. In the search bar that
 shows up type "terminal", choose the terminal app from the list of results (it will look like a
