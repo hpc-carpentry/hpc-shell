@@ -12,7 +12,7 @@ objectives:
 - "Explain what usually happens if a program or pipeline isn't given any input to process."
 keypoints:
 - "The `*` wildcard is used as a placeholder to match any text that follows a pattern."
-- "Redirect a commands output to a file with `>`."
+- "Redirect a command's output to a file with `>`."
 - "Commands can be chained with `|`"
 ---
 
@@ -38,6 +38,7 @@ would be equivalent to all `.txt` files in a directory for instance. `*` by itse
 Let's use our example data to see what I mean.
 
 ```
+$ tar xvf bash-lesson.tar.gz
 $ ls
 ```
 {: .language-bash}
@@ -336,7 +337,7 @@ from that file.
 > > ```
 > > {: .language-bash}
 > > 
-> > Output of `ls` is one line per item so counting lines gives the number of files.
+> > Output of `ls` is one line per item, when chaining commands together like this,  so counting lines gives the number of files.
 > {: .solution}
 {: .challenge}
 
