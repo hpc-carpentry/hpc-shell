@@ -1,5 +1,5 @@
-# Travis-CI config for https://github.com/hpc-carpentry/hpc-intro
-# Results at https://travis-ci.org/github/hpc-carpentry/hpc-intro
+# Travis-CI config for https://github.com/hpc-carpentry/hpc-shell
+# Results at https://travis-ci.org/github/hpc-carpentry/hpc-shell
 
 dist: xenial
 language: python
