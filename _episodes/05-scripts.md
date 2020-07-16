@@ -99,7 +99,7 @@ understand **what each field of a given row represents**, working left to right.
 
 1. **Permissions:** On the very left side, there is a string of the characters `d`, `r`, `w`, `x`,
    and `-`. The `d` indicates if something is a directory (there is a `-` in that spot if it is not
-   a directory). The other `r`, `w`, `x` bits indicates permission to **R**ead, **W**rite, and
+   a directory). The other `r`, `w`, `x` bits indicate permission to **R**ead, **W**rite, and
    e**X**ecute a file. There are three fields of `rwx` permissions following the spot for `d`. If a
    user is missing a permission to do something, it's indicated by a `-`.
      + The first set of `rwx` are the permissions that the owner has (in this case the owner is
