@@ -359,7 +359,7 @@ word_counts.txt
 ```
 {: .output}
 
-There's actually even a shortcut to run on all files of a particular type, say all `.gz` files:
+There's a shortcut to run on all files of a particular type, say all `.gz` files:
 
 ```
 #!/bin/bash
