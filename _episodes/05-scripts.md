@@ -95,7 +95,7 @@ drwxrwxr-x 2 yourUsername tc001     4096 Jan 16 19:16 fastq
 {: .output}
 
 That's a huge amount of output: a full listing of everything in the directory. Let's see if we can
-understand what each field represents, working left to right.
+understand **what each field of a given row represents**, working left to right.
 
 1. **Permissions:** On the very left side, there is a string of the characters `d`, `r`, `w`, `x`,
    and `-`. The `d` indicates if something is a directory (there is a `-` in that spot if it is not
