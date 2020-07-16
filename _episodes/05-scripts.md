@@ -116,9 +116,10 @@ understand **what each field of a given row represents**, working left to right.
    in the first permissions field.
 4. **Group:** This is the user group of the user who owns the file. Members of this user group have
    permissions indicated in the second permissions field.
-5. **Size of file:** This is the size of a file in bytes, or the number of files/subdirectories if
-   we are looking at a directory. (We can use the `-h` option here to get a human-readable file size
-   in megabytes, gigabytes, etc.)
+5. **Size of item:** This is the number of bytes in a file, or the number of [filesystem
+   blocks](https://en.wikipedia.org/wiki/Block_(data_storage)) occupied by the contents of a
+   folder. (We can use the `-h` option here to get a human-readable file size in megabytes,
+   gigabytes, etc.)
 6. **Time last modified:** This is the last time the file was modified.
 7. **Filename:** This is the filename.
 
