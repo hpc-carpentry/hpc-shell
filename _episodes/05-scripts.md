@@ -110,7 +110,7 @@ understand **what each field of a given row represents**, working left to right.
        with a file. Though files are typically created with read permissions for everyone, typically
        the permissions on your home directory prevent others from being able to access the file in
        the first place.
-2. **References:** This counts the number of references (hard links) to the item (file, folder,
+2. **References:** This counts the number of references ([hard links](https://en.wikipedia.org/wiki/Hard_link)) to the item (file, folder,
    symbolic link or "shortcut").
 3. **Owner:** This is the username of the user who owns the file. Their permissions are indicated
    in the first permissions field.
