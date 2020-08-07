@@ -10,7 +10,7 @@ overview of the tools available and how to use them effectively.
 
 By the end of this workshop, students will know how to:
 
-* Use the UNIX command line to operate a computer, connect to a cluster, and write simple shell
+* Use the UNIX command line (also known as terminal or shell) to operate a computer, connect to a cluster, and write simple shell
   scripts.
 * Submit and manage jobs on a cluster using a scheduler, transfer files, and use software through
   environment modules.
@@ -19,12 +19,10 @@ By the end of this workshop, students will know how to:
 
 > ## NOTE
 >
-> This is the draft HPC Carpentry release. Comments and feedback are welcome.
-{: .callout}
+> - This is the draft HPC Carpentry release. Comments and feedback are welcome.
+> - Additionally, please explore the lesson, [shell-novice](https://swcarpentry.github.io/shell-novice/) until this one is complete.
 
 > ## Prerequisites
 >
 > There are no real prerequisites for this lesson, but prior programming and/or command line
 > experience will be helpful.
-{: .prereq}
-
