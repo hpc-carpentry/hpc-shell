@@ -21,7 +21,7 @@ By the end of this workshop, students will know how to:
 >
 > - This is the draft HPC Carpentry release. Comments and feedback are welcome.
 > - Additionally, please explore the lesson, [shell-novice](https://swcarpentry.github.io/shell-novice/) until this one is complete.
-{.callout}
+{: .callout}
 
 > ## Prerequisites
 >
