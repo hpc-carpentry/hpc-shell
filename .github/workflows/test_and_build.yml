@@ -1,0 +1,48 @@
+name: Check lesson and build for all configs
+
+on:
+  pull_request:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install codespell
+      run: |
+        pip3 install codespell
+    - name: Check spelling
+      run: |
+        codespell --skip="assets,*.svg,bin" --quiet-level=2  -L "rouge,dropse,namd,hist"
+
+  check_lesson_and_build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+    - name: Install basic requirements
+      run: |
+        # Need this library for nokogiri
+        sudo apt-get install libxslt1-dev    
+        gem install bundler json kramdown
+        bundle config set path '.vendor/bundle'
+        bundle config build.nokogiri --use-system-libraries
+        bundle install
+    - name: "Check lesson for warnings"
+      run: |
+        make lesson-check-all
+    - name: "Check lesson for errors"
+      run: |
+        make lesson-check
+    - name: "Check build"
+      run: |
+        make --always-make site

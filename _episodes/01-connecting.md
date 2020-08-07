@@ -36,7 +36,7 @@ but a very fast way is to use the terminal shortcut key sequence: Ctrl+Alt+T.
 ### Mac
 
 Macs have had a terminal built in since the first version of OS X since it is
-built on a UNIX-like operating system, leveraging many parts from BSD (Berkeley Systems Designs).
+built on a UNIX-like operating system, leveraging many parts from BSD (Berkeley Software Distribution).
 The terminal can be quickly opened through the use
 of the Searchlight tool. Hold down the command key and press the spacebar. In the search bar that
 shows up type "terminal", choose the terminal app from the list of results (it will look like a
@@ -47,7 +47,7 @@ can find Terminal under "Utilities" in the Applications menu.
 
 While Windows does have a command-line interface known as the "Command Prompt" that has its roots in
 MS-DOS (Microsoft Disk Operating System) it does not have an SSH tool built into it and so one needs
-to be installed. There are a variety of programs that can be used for this, two common ones we
+to be installed. There are a variety of programs that can be used for this; two common ones we
 describe here, as follows:
 
 #### MobaXterm
@@ -56,7 +56,7 @@ MobaXterm is a terminal window emulator for Windows and the home edition can be 
 from [mobatek.net](https://mobaxterm.mobatek.net/download-home-edition.html). If you follow the link
 you will note that there are two editions of the home version available: Portable and Installer. The
 portable edition puts all MobaXterm content in a folder on the desktop (or anywhere else you would
-like it) so that it is easy add plug-ins or remove the software. The installer edition adds
+like it) so that it is easy to add plug-ins or remove the software. The installer edition adds
 MobaXterm to your Windows installation and menu as any other program you might install.
 If you are not sure that you will continue to use MobaXterm in the future, the portable edition
 is likely the best choice for you.
@@ -75,10 +75,12 @@ disposal.
 
 It is strictly speaking not necessary to have a terminal running on your local computer in order to
 access and use a remote system, only a window into the remote system once connected. PuTTY is likely
+It is, strictly speaking, not necessary to have a terminal running on your local computer in order to
+access and use a remote system, only a window into the remote system once connected. PuTTY is likely
 the oldest, most well-known, and widely used software solution to take this approach.
 
 PuTTY is available for free download from [www.putty.org](http://www.putty.org/). Download the
-version that is correct for your operating system and install it as you would other software on you
+version that is correct for your operating system and install it as you would other software on your
 Windows system. Once installed it will be available through the start menu or similar.
 
 Running PuTTY will not initially produce a terminal but instead a window full of connection options.

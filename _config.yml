@@ -100,6 +100,9 @@ exclude:
 # Turn on built-in syntax highlighting.
 highlighter: rouge
 
+# Invoke the Carpentries theme rather than copying into our repository.
+remote_theme: carpentries/carpentries-theme
+
 # Local host and scheduler options:
 # * workshop_host - The name of the remote system
 # * workshop_host_id - A unique string to identify the system (used to name code snippets)
@@ -123,3 +126,4 @@ workshop_sched_id: "ComputeCanada_Graham_slurm"
 # workshop_host_location: "EPCC, The University of Edinburgh"
 # workshop_host_prompt: "[yourUsername@cirrus-login0 ~]$ "
 # workshop_host_homedir: "/lustre/home/tc001"
+

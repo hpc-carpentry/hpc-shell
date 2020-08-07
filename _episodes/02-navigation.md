@@ -18,7 +18,7 @@ keypoints:
 - "Hit `tab` to autocomplete whatever you're currently typing."
 ---
 
-At the point in this lesson, we've just logged into the system. Nothing has happened yet, and we're
+At this point in the lesson, we've just logged into the system. Nothing has happened yet, and we're
 not going to be able to do anything until we learn a few basic commands. By the end of this lesson,
 you will know how to "move around" the system and look at what's there.
 
@@ -55,7 +55,7 @@ More specifically, when we type `whoami` the shell:
 4.  displays a new prompt to tell us that it's ready for more commands.
 
 Next, let's find out where we are by running a command called `pwd` (which stands for "print working
-directory"). At any moment, our **current working directory** (where we are) is the directory that
+directory"). ("Directory" is another word for "folder"). At any moment, our **current working directory** (where we are) is the directory that
 the computer assumes we want to run commands in unless we explicitly specify something else. Here,
 the computer's response is `{{ site.workshop_host_homedir }}/yourUsername`, which is ``yourUsername`` **home directory**.
 Note that the location of your home directory may differ from system to system.
@@ -121,22 +121,25 @@ $ pwd
 ```
 {: .output}
 
+What is the `~` character? When using the shell, `~` is a shortcut that represents
+`{{ site.workshop_host_homedir }}/yourUserName`. 
+
 Now that we know how to use `cd`, we can go anywhere. That's a lot of responsibility. What happens
 if we get "lost" and want to get back to where we started?
 
-To go back to your home directory, the following two commands will work:
+To go back to your home directory, the following three commands will work:
 
 ```
 $ cd {{ site.workshop_host_homedir }}/yourUserName
 $ cd ~
+$ cd
 ```
 {: .language-bash}
 
-What is the `~` character? When using the shell, `~` is a shortcut that represents
-`{{ site.workshop_host_homedir }}/yourUserName`.
+
 
 A quick note on the structure of a UNIX (Linux/Mac/Android/Solaris/etc) filesystem. Directories and
-absolute paths (i.e. exact position in the system) are always prefixed with a `/`. `/` is the "root"
+absolute paths (i.e. exact position in the system) are always prefixed with a `/`. `/` by itself is the "root"
 or base directory.
 
 Let's go there now, look around, and then return to our home directory.
@@ -164,7 +167,7 @@ your OS.
 > File storage locations:
 >
 > * **Network filesystem** - Your home directory is an example of a network filesystem. Data stored
->   here is available throughout the HPC system and files stored here are often backed up (but check you local configuration to be sure!). Files stored
+>   here is available throughout the HPC system and files stored here are often backed up (but check your local configuration to be sure!). Files stored
 >   here are typically slower to access, the data is actually stored on another computer and is
 >   being transmitted and made available over the network!
 > * **Scratch** - Some systems may offer "scratch" space. Scratch space is typically faster to use
@@ -176,6 +179,7 @@ your OS.
 >   backed up. It differs from scratch space in that files in a work file system are not automatically
 >   deleted for you, you must manage the space yourself.
 > * **Local scratch (job only)** - Some systems may offer local scratch space while executing a job.
+>   (A job is a program which you submit to run on an HPC system, and will be covered later.)
 >   Such storage is very fast, but will be deleted at the end of your job.
 > * **Ramdisk (job only)** - Some systems may let you store files in a "RAM disk" while running a
 >   job, where files are stored directly in the computer's memory. This extremely fast, but files
@@ -207,7 +211,7 @@ $ pwd
 
 Many commands also have multiple behaviours that you can invoke with command line 'flags.' What is a
 flag? It's generally just your command followed by a '-' and the name of the flag (sometimes it's
-'--' followed by the name of the flag. You follow the flag(s) with any additional arguments you
+'--' followed by the name of the flag). You follow the flag(s) with any additional arguments you
 might need.
 
 We're going to demonstrate a couple of these "flags" using `ls`.
@@ -265,7 +269,7 @@ drwx--S--- 2 yourUsername tc001 4096 Nov 28 09:58 .ssh
 {: .output}
 
 Flags generally precede any arguments passed to a UNIX command. `ls` actually takes an extra
-argument that specifies a directory to look into. When you use flags and arguments together, they
+argument that specifies a directory to look into. When you use flags and arguments together, the
 syntax (how it's supposed to be typed) generally looks something like this:
 
 ```

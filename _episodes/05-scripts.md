@@ -83,41 +83,45 @@ $ ls -l
 {: .language-bash}
 
 ```
--rw-rw-r--. 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
--rw-rw-r--. 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
--rw-rw-r--. 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
--rw-r--r--. 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
-drwxrwxr-x. 2 yourUsername tc001     4096 Jan 16 19:16 fastq
--rw-r--r--. 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
--rw-rw-r--. 1 yourUsername tc001       15 Jan 16 19:17 test.txt
--rw-rw-r--. 1 yourUsername tc001      245 Jan 16 19:24 word_counts.txt
+-rw-rw-r-- 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
+-rw-rw-r-- 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
+-rw-rw-r-- 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
+-rw-r--r-- 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
+drwxrwxr-x 2 yourUsername tc001     4096 Jan 16 19:16 fastq
+-rw-r--r-- 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
+-rw-rw-r-- 1 yourUsername tc001       15 Jan 16 19:17 test.txt
+-rw-rw-r-- 1 yourUsername tc001      245 Jan 16 19:24 word_counts.txt
 ```
 {: .output}
 
-That's a huge amount of output. Let's see if we can understand what it is, working left to right.
+That's a huge amount of output: a full listing of everything in the directory. Let's see if we can
+understand **what each field of a given row represents**, working left to right.
 
-+ **1st column - Permissions:** On the very left side, there is a string of the characters `d`, `r`,
-  `w`, `x`, and `-`. The `d` indicates if something is a directory (there is a `-` in that
-  spot if it is not a directory). The other `r`, `w`, `x` bits indicates permission to **R**ead
-  **W**rite and e**X**ecute a file. There are three columns of `rwx` permissions following the spot
-  for `d`. If a user is missing a permission to do something, it's indicated by a `-`.
-    + The first column of `rwx` are the permissions that the owner has (in this case the owner is
-      `yourUsername`).
-    + The second set of `rwx`s are permissions that other members of the owner's group share (in
-      this case, the group is named `tc001`).
-    + The third set of `rwx`s are permissions that anyone else with access to this computer can do
-      with a file. Though files are typically created with read permissions for everyone, typically
-      the permissions on your home directory prevent others from being able to access the file in
-      the first place.
-+ **2nd column - Owner:** This is the username of the user who owns the file. Their permissions are
-  indicated in the first permissions column.
-+ **3rd column - Group:** This is the user group of the user who owns the file. Members of this user
-  group have permissions indicated in the second permissions column.
-+ **4th column - Size of file:** This is the size of a file in bytes, or the number of
-  files/subdirectories if we are looking at a directory. (We can use the `-h` option here to get a
-  human-readable file size in megabytes, gigabytes, etc.)
-+ **5th column - Time last modified:** This is the last time the file was modified.
-+ **6th column - Filename:** This is the filename.
+1. **Permissions:** On the very left side, there is a string of the characters `d`, `r`, `w`, `x`,
+   and `-`. The `d` indicates if something is a directory (there is a `-` in that spot if it is not
+   a directory). The other `r`, `w`, `x` bits indicate permission to **R**ead, **W**rite, and
+   e**X**ecute a file. There are three fields of `rwx` permissions following the spot for `d`. If a
+   user is missing a permission to do something, it's indicated by a `-`.
+     + The first set of `rwx` are the permissions that the owner has (in this case the owner is
+       `yourUsername`).
+     + The second set of `rwx`s are permissions that other members of the owner's group share (in
+       this case, the group is named `tc001`).
+     + The third set of `rwx`s are permissions that anyone else with access to this computer can do
+       with a file. Though files are typically created with read permissions for everyone, typically
+       the permissions on your home directory prevent others from being able to access the file in
+       the first place.
+2. **References:** This counts the number of references ([hard links](https://en.wikipedia.org/wiki/Hard_link)) to the item (file, folder,
+   symbolic link or "shortcut").
+3. **Owner:** This is the username of the user who owns the file. Their permissions are indicated
+   in the first permissions field.
+4. **Group:** This is the user group of the user who owns the file. Members of this user group have
+   permissions indicated in the second permissions field.
+5. **Size of item:** This is the number of bytes in a file, or the number of [filesystem
+   blocks](https://en.wikipedia.org/wiki/Block_(data_storage)) occupied by the contents of a
+   folder. (We can use the `-h` option here to get a human-readable file size in megabytes,
+   gigabytes, etc.)
+6. **Time last modified:** This is the last time the file was modified.
+7. **Filename:** This is the filename.
 
 So how do we change permissions? As I mentioned earlier, we need permission to execute our script.
 Changing permissions is done with `chmod`. To add executable permissions for all users we could use
@@ -130,14 +134,14 @@ $ ls -l
 {: .language-bash}
 
 ```
--rw-rw-r--. 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
--rwxrwxr-x. 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
--rw-rw-r--. 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
--rw-r--r--. 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
-drwxrwxr-x. 2 yourUsername tc001     4096 Jan 16 19:16 fastq
--rw-r--r--. 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
--rw-rw-r--. 1 yourUsername tc001       15 Jan 16 19:17 test.txt
--rw-rw-r--. 1 yourUsername tc001      245 Jan 16 19:24 word_counts.txt
+-rw-rw-r-- 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
+-rwxrwxr-x 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
+-rw-rw-r-- 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
+-rw-r--r-- 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
+drwxrwxr-x 2 yourUsername tc001     4096 Jan 16 19:16 fastq
+-rw-r--r-- 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
+-rw-rw-r-- 1 yourUsername tc001       15 Jan 16 19:17 test.txt
+-rw-rw-r-- 1 yourUsername tc001      245 Jan 16 19:24 word_counts.txt
 ```
 {: .output}
 
@@ -159,7 +163,7 @@ we want. Comments do not get run. Let's try out some comments in the console, th
 script!
 
 ```
-# This wont show anything
+# This won't show anything.
 ```
 
 Now lets try adding this to our script with `nano`. Edit your script to look something like this:
@@ -278,7 +282,7 @@ $ echo $TEST
 ```
 {: .language-bash}
 ```
-total 90372 -rw-rw-r--. 1 jeff jeff 12534006 Jan 16 18:50 bash-lesson.tar.gz -rwxrwxr-x. 1 jeff jeff 40 Jan 1619:41 demo.sh -rw-rw-r--. 1 jeff jeff 77426528 Jan 16 18:50 dmel-all-r6.19.gtf -rw-r--r--. 1 jeff jeff 721242 Jan 25 2016 dmel_unique_protein_isoforms_fb_2016_01.tsv drwxrwxr-x. 2 jeff jeff 4096 Jan 16 19:16 fastq -rw-r--r--. 1 jeff jeff 1830516 Jan 25 2016 gene_association.fb.gz -rw-rw-r--. 1 jeff jeff 15 Jan 16 19:17 test.txt -rw-rw-r--. 1 jeff jeff 245 Jan 16 19:24 word_counts.txt
+total 90372 -rw-rw-r-- 1 jeff jeff 12534006 Jan 16 18:50 bash-lesson.tar.gz -rwxrwxr-x. 1 jeff jeff 40 Jan 1619:41 demo.sh -rw-rw-r-- 1 jeff jeff 77426528 Jan 16 18:50 dmel-all-r6.19.gtf -rw-r--r-- 1 jeff jeff 721242 Jan 25 2016 dmel_unique_protein_isoforms_fb_2016_01.tsv drwxrwxr-x. 2 jeff jeff 4096 Jan 16 19:16 fastq -rw-r--r-- 1 jeff jeff 1830516 Jan 25 2016 gene_association.fb.gz -rw-rw-r-- 1 jeff jeff 15 Jan 16 19:17 test.txt -rw-rw-r-- 1 jeff jeff 245 Jan 16 19:24 word_counts.txt
 ```
 {: .output}
 
@@ -356,7 +360,7 @@ word_counts.txt
 ```
 {: .output}
 
-There's actually even a shortcut to run on all files of a particular type, say all .gz files:
+There's a shortcut to run on all files of a particular type, say all `.gz` files:
 
 ```
 #!/bin/bash
@@ -428,7 +432,7 @@ gene_association.fb.gz
 > > ```
 > > {: .language-bash}
 > >
-> > Note that this will also print directories appended with ".processed". To truely only get 
+> > Note that this will also print directories appended with ".processed". To truly only get 
 > > files and not directories, we need to modify this to use the `find` command to give us only
 > > files in the current directory:
 > > ```
