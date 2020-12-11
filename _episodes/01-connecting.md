@@ -59,7 +59,7 @@ computer by SSH. It is can be downloaded for free from
 #### Windows Subsystem for Linux
 
 The Windows Subsystem for Linux also allows you to connect to a remote computer by using SSH.
-Instructions on installing it can be found [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+Instructions on installing it can be found [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
 #### MobaXterm
 
