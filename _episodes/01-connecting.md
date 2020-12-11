@@ -47,18 +47,18 @@ can find Terminal under "Utilities" in the Applications menu.
 
 While Windows does have a command-line interface known as the "Command Prompt" that has its roots in
 MS-DOS (Microsoft Disk Operating System) it does not have an SSH tool built into it and so one needs
-to be installed. There are a variety of programs that can be used for this; two common ones we
+to be installed. There are a variety of programs that can be used for this; a few common ones we
 describe here, as follows:
 
 #### Git BASH
 
 Git BASH gives you a terminal like interface in Windows. You can use this to connect to a remote 
-computer by SSH. It is can be downloaded for free from
+computer via SSH. It can be downloaded for free from
 [here](https://gitforwindows.org/).
 
 #### Windows Subsystem for Linux
 
-The Windows Subsystem for Linux also allows you to connect to a remote computer by using SSH.
+The Windows Subsystem for Linux also allows you to connect to a remote computer via SSH.
 Instructions on installing it can be found [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
 #### MobaXterm
