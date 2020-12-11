@@ -50,6 +50,17 @@ MS-DOS (Microsoft Disk Operating System) it does not have an SSH tool built into
 to be installed. There are a variety of programs that can be used for this; two common ones we
 describe here, as follows:
 
+#### Git BASH
+
+Git BASH gives you a terminal like interface in Windows. You can use this to connect to a remote 
+computer by SSH. It is can be downloaded for free from
+[here](https://gitforwindows.org/).
+
+#### Windows Subsystem for Linux
+
+The Windows Subsystem for Linux also allows you to connect to a remote computer by using SSH.
+Instructions on installing it can be found [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
 #### MobaXterm
 
 MobaXterm is a terminal window emulator for Windows and the home edition can be downloaded for free
