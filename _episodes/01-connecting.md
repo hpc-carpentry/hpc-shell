@@ -145,20 +145,22 @@ system now:
 ```
 ssh yourUsername@{{ site.workshop_host_login }}
 ```
-{: .language-bash}
+{: .bash}
 
-```{.output}
+```
 {% include /snippets/01/login_output.{{ site.workshop_host_id }} %}
 ```
+{: .output}
 
 If you've connected successfully, you should see a prompt like the one below.
 This prompt is informative, and lets you grasp certain information at a glance.
 (If you don't understand what these things are, don't worry! We will cover
 things in depth as we explore the system further.)
 
-```{.output}
+```
 {{ site.workshop_host_prompt }}
 ```
+{: .output}
 
 ## Telling the Difference between the Local Terminal and the Remote Terminal
 

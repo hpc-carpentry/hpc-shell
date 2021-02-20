@@ -29,7 +29,7 @@ $ cd ~
 $ mkdir hpc-test
 $ cd hpc-test
 ```
-{: .language-bash}
+{: .bash}
 
 
 ## Creating and Editing Text Files
@@ -50,7 +50,7 @@ save it.
 ```
 $ nano draft.txt
 ```
-{: .language-bash}
+{: .bash}
 
 ![Nano in action]({{ site.url }}{{ site.baseurl }}/fig/nano-screenshot.png)
 
@@ -97,7 +97,7 @@ Do a quick check to confirm our file was created.
 ```
 $ ls
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 draft.txt
@@ -113,7 +113,7 @@ doing this, one of which is reading the entire file with `cat`.
 ```
 $ cat draft.txt
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 It's not "publish or perish" any more,
@@ -129,7 +129,7 @@ input files in the order specified in the `cat`'s invocation. For example,
 ```
 $ cat draft.txt draft.txt
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 It's not "publish or perish" any more,
@@ -156,7 +156,7 @@ this before, using `mkdir`.
 $ mkdir files
 $ ls
 ```
-{: .language-bash}
+{: .bash}
 ```
 draft.txt  files
 ```
@@ -174,7 +174,7 @@ $ mv draft.txt files
 $ cd files
 $ ls
 ```
-{: .language-bash}
+{: .bash}
 ```
 draft.txt
 ```
@@ -190,7 +190,7 @@ similar to moving files: `mv oldName newName`.
 $ mv draft.txt newname.testfile
 $ ls
 ```
-{: .language-bash}
+{: .bash}
 ```
 newname.testfile
 ```
@@ -224,7 +224,7 @@ $ cp newname.testfile ..
 $ cd ..
 $ ls
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 newname.testfile copy.testfile
@@ -248,7 +248,7 @@ $ ls
 $ rm newname.testfile
 $ ls
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 files Documents newname.testfile
@@ -265,7 +265,7 @@ $ rm -r Documents
 $ rm -r files
 $ ls
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 files Documents
@@ -316,7 +316,7 @@ a link).
 ```
 $ wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 ```
-{: .language-bash}
+{: .bash}
 
 > ## Problems with `wget`?
 >
@@ -332,7 +332,7 @@ $ wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 > ```
 > $ curl -O {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 > ```
-> {: .language-bash}
+> {: .bash}
 >
 > For very large downloads, you might consider using
 > [Aria2](https://aria2.github.io/), which has support for downloading the same
@@ -342,7 +342,7 @@ $ wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 > ```
 > $ aria2c {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz https://hpc-carpentry.github.io/hpc-shell/files/bash-lesson.tar.gz
 > ```
-> {: .language-bash}
+> {: .bash}
 >
 > > ## Install cURL
 > >
@@ -386,7 +386,7 @@ the files from a `.tar.gz` file, we run the command `tar -xvf filename.tar.gz`:
 ```
 $ tar -xvf bash-lesson.tar.gz
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 dmel-all-r6.19.gtf

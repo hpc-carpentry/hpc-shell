@@ -43,7 +43,7 @@ example data to see what I mean.
 $ tar xvf bash-lesson.tar.gz
 $ ls
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 bash-lesson.tar.gz                           SRR307024_2.fastq  SRR307028_1.fastq
@@ -63,7 +63,7 @@ we are going to learn a new command that tells us how long a file is: `wc`. `wc
 ```
 $ wc -l dmel-all-r6.19.gtf
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 542048 dmel-all-r6.19.gtf
@@ -77,7 +77,7 @@ really handy! `*.fastq` would match every file ending in `.fastq`.
 ```
 $ wc -l *.fastq
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 20000 SRR307023_1.fastq
@@ -107,7 +107,7 @@ in the directory? A nice trick to keep in mind is that `*` by itself matches
 ```
 $ wc -l *
 ```
-{: .language-bash}
+{: .bash}
 
 ```
     53037 bash-lesson.tar.gz
@@ -144,7 +144,7 @@ $ wc -l *
 > > ```
 > > wc -l *fb*
 > > ```
-> > {: .language-bash}
+> > {: .bash}
 > > 
 > > i.e. *anything or nothing* then `fb` then *anything or nothing*
 > {: .solution}
@@ -161,7 +161,7 @@ $ wc -l *
 > > mkdir fastq
 > > mv *.fastq fastq/
 > > ```
-> > {: .language-bash}
+> > {: .bash}
 > {: .solution}
 {: .challenge}
 
@@ -185,7 +185,7 @@ $ echo "this is a test" > test.txt
 $ ls
 $ cat test.txt
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 this is a test
@@ -204,7 +204,7 @@ Awesome, let's try that with a more complicated command, like `wc -l`.
 $ wc -l * > word_counts.txt
 $ cat word_counts.txt
 ```
-{: .language-bash}
+{: .bash}
 ```
 wc: fastq: Is a directory
 
@@ -245,7 +245,7 @@ before.
 ```
 $ wc -l * &> word_counts.txt
 ```
-{: .language-bash}
+{: .bash}
 
 Notice how there was no output to the console that time. Let's check that the
 error message went to the file like we specified.
@@ -253,7 +253,7 @@ error message went to the file like we specified.
 ```
 $ cat word_counts.txt
 ```
-{: .language-bash}
+{: .bash}
 ```
     53037 bash-lesson.tar.gz
    542048 dmel-all-r6.19.gtf
@@ -279,7 +279,7 @@ instead of `>`, we will use `>>`.
 $ echo "We want to add this sentence to the end of our file" >> word_counts.txt
 $ cat word_counts.txt
 ```
-{: .language-bash}
+{: .bash}
 ```
   22129 dmel_unique_protein_isoforms_fb_2016_01.tsv
  471308 Drosophila_melanogaster.BDGP5.77.gtf
@@ -307,7 +307,7 @@ all of the entries pertaining to the `Act5C` gene in *Drosophila melanogaster*.
 ```
 $ grep Act5C dmel-all-r6.19.gtf
 ```
-{: .language-bash}
+{: .bash}
 
 The output is nearly unintelligible since there is so much of it. Let's send
 the output of that `grep` command to `head` so we can just take a peek at the
@@ -316,7 +316,7 @@ first line. The `|` operator lets us send output from one command to the next:
 ```
 $ grep Act5C dmel-all-r6.19.gtf | head -n 1
 ```
-{: .language-bash}
+{: .bash}
 ```
 X	FlyBase	gene	5900861	5905399	.	+	.	gene_id "FBgn0000042"; gene_symbol "Act5C";
 ```
@@ -329,7 +329,7 @@ number of entries for Act5C with `wc -l`. We can do the same trick to send
 ```
 $ grep Act5C dmel-all-r6.19.gtf | wc -l
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 46
@@ -349,7 +349,7 @@ the number of lines from that file.
 > > ```
 > > ls fastq/ | wc -l
 > > ```
-> > {: .language-bash}
+> > {: .bash}
 > > 
 > > Output of `ls` is one line per item, when chaining commands together like
 > > this, so counting lines gives the number of files.
@@ -363,7 +363,7 @@ the number of lines from that file.
 > ```
 > $ gzip gene_association.fb
 > ```
-> {: .language-bash}
+> {: .bash}
 >
 > `zcat` acts like `cat`, except that it can read information from `.gz`
 > (compressed) files. Using `zcat`, can you write a command to take a look at
@@ -375,7 +375,7 @@ the number of lines from that file.
 > > ```
 > > zcat gene_association.fb.gz | head
 > > ```
-> > {: .language-bash}
+> > {: .bash}
 > > 
 > > The `head` command without any options shows the first 10 lines of a file.
 > {: .solution}

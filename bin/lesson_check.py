@@ -32,7 +32,6 @@ REQUIRED_FILES = {
     '%/CODE_OF_CONDUCT.md': True,
     '%/CONTRIBUTING.md': False,
     '%/LICENSE.md': True,
-    '%/MAINTENANCE.md': False,
     '%/README.md': False,
     '%/_extras/discuss.md': True,
     '%/_extras/guide.md': True,
@@ -553,7 +552,6 @@ class CheckGeneric(CheckBase):
 
 CHECKERS = [
     (re.compile(r'CONTRIBUTING\.md'), CheckNonJekyll),
-    (re.compile(r'MAINTENANCE\.md'), CheckNonJekyll),
     (re.compile(r'README\.md'), CheckNonJekyll),
     (re.compile(r'index\.md'), CheckIndex),
     (re.compile(r'reference\.md'), CheckReference),

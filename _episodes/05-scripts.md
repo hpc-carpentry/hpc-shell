@@ -46,7 +46,7 @@ Our file should now look like this:
 
 echo "Our script worked!"
 ```
-{: .language-bash}
+{: .bash}
 
 Ready to run our program? 
 Let's try running it:
@@ -54,7 +54,7 @@ Let's try running it:
 ```
 $ demo.sh 
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 bash: demo.sh: command not found...
@@ -72,7 +72,7 @@ site.workshop_host_homedir }}/yourUserName/demo.sh`, or with the relative path
 ```
 $ ./demo.sh
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 bash: ./demo.sh: Permission denied
@@ -85,7 +85,7 @@ There's one last thing we need to do. Before a file can be run, it needs
 ```
 $ ls -l
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 -rw-rw-r-- 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
@@ -140,7 +140,7 @@ executable permissions for all users we could use this:
 $ chmod +x demo.sh
 $ ls -l
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 -rw-rw-r-- 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
@@ -159,7 +159,7 @@ Now that we have executable permissions for that file, we can run it.
 ```
 $ ./demo.sh
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 Our script worked!
@@ -175,6 +175,7 @@ script!
 ```
 # This won't show anything.
 ```
+{: .output}
 
 Now lets try adding this to our script with `nano`. Edit your script to look
 something like this:
@@ -185,6 +186,7 @@ something like this:
 # This is a comment... they are nice for making notes!
 echo "Our script worked!"
 ```
+{: .bash}
 
 When we run our script, the output should be unchanged from before!
 
@@ -203,7 +205,7 @@ Shell variable names are often uppercase by convention (but do not have to be).
 ```
 $ VAR="This is our variable"
 ```
-{: .language-bash}
+{: .bash}
 
 To use a variable, prefix its name with a `$` sign. Note that if we want to
 simply check what a variable is, we should use echo (or else the shell will try
@@ -212,7 +214,7 @@ to run the contents of a variable).
 ```
 $ echo $VAR
 ```
-{: .language-bash}
+{: .bash}
 ```
 This is our variable
 ```
@@ -233,12 +235,12 @@ FILE=dmel-all-r6.19.gtf
 # call wc -l on our file
 wc -l $FILE
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 $ ./demo.sh
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 542048 dmel-all-r6.19.gtf
@@ -264,13 +266,12 @@ Our script:
 # call wc -l on our first argument
 wc -l $1
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 $ ./demo.sh dmel_unique_protein_isoforms_fb_2016_01.tsv
 ```
-{: .language-bash}
-
+{: .bash}
 ```
 22129 dmel_unique_protein_isoforms_fb_2016_01.tsv
 ```
@@ -284,7 +285,7 @@ A demonstration of what doesn't work:
 ```
 $ TEST=ls -l
 ```
-{: .language-bash}
+{: .bash}
 
 ```
 -bash: -l: command not found
@@ -296,7 +297,7 @@ What does work (we need to surround any command with `$(command)`):
 $ TEST=$(ls -l)
 $ echo $TEST
 ```
-{: .language-bash}
+{: .bash}
 ```
 total 90372 -rw-rw-r-- 1 jeff jeff 12534006 Jan 16 18:50 bash-lesson.tar.gz -rwxrwxr-x. 1 jeff jeff 40 Jan 1619:41 demo.sh -rw-rw-r-- 1 jeff jeff 77426528 Jan 16 18:50 dmel-all-r6.19.gtf -rw-r--r-- 1 jeff jeff 721242 Jan 25 2016 dmel_unique_protein_isoforms_fb_2016_01.tsv drwxrwxr-x. 2 jeff jeff 4096 Jan 16 19:16 fastq -rw-r--r-- 1 jeff jeff 1830516 Jan 25 2016 gene_association.fb.gz -rw-rw-r-- 1 jeff jeff 15 Jan 16 19:17 test.txt -rw-rw-r-- 1 jeff jeff 245 Jan 16 19:24 word_counts.txt
 ```
@@ -323,7 +324,7 @@ do
     echo $VAR
 done
 ```
-{: .language-bash}
+{: .bash}
 
 When a for-loop gets run, the loop will run once for everything following the
 word `in`. In each iteration, the variable `$VAR` is set to a particular value
@@ -337,8 +338,7 @@ Let's run the script we just wrote (I saved mine as `loop.sh`).
 $ chmod +x loop.sh
 $ ./loop.sh
 ```
-{: .language-bash}
-
+{: .bash}
 ```
 first
 second
@@ -359,12 +359,12 @@ do
         echo $VAR
 done
 ```
+{: .bash}
 
 ```
 $ ./loop.sh
 ```
-{: .language-bash}
-
+{: .bash}
 ```
 bash-lesson.tar.gz
 demo.sh
@@ -389,8 +389,7 @@ do
     echo $VAR
 done
 ```
-{: .language-bash}
-
+{: .bash}
 ```
 bash-lesson.tar.gz
 gene_association.fb.gz
@@ -416,7 +415,7 @@ gene_association.fb.gz
 > >    head -n 4 $FILE
 > > done
 > > ```
-> > {: .language-bash}
+> > {: .bash}
 > >
 > > The "for" line could be modified to be `for FILE in *_1.fastq` to achieve
 > > the second aim.
@@ -433,7 +432,7 @@ gene_association.fb.gz
 > FILE=stuff.txt
 > echo ${FILE}.example
 > ```
-> {: .language-bash}
+> {: .bash}
 > ```
 > stuff.txt.example
 > ```
@@ -453,7 +452,7 @@ gene_association.fb.gz
 > >    echo ${FILE}.processed
 > > done
 > > ```
-> > {: .language-bash}
+> > {: .bash}
 > >
 > > Note that this will also print directories appended with ".processed". To
 > > truly only get files and not directories, we need to modify this to use the
@@ -467,7 +466,7 @@ gene_association.fb.gz
 > >    echo ${FILE}.processed
 > > done
 > > ```
-> > {: .language-bash}
+> > {: .bash}
 > >
 > > but this will have the side-effect of listing hidden files too.
 > {: .solution}
@@ -491,7 +490,7 @@ gene_association.fb.gz
 > chmod 777 example
 > ls -l example
 > ```
-> {: .language-bash}
+> {: .bash}
 >
 > How might we give ourselves permission to do everything with a file, but
 > allow no one else to do anything with it.
@@ -501,7 +500,7 @@ gene_association.fb.gz
 > > ```
 > > chmod 700 example
 > > ```
-> > {: .language-bash}
+> > {: .bash}
 > >
 > > We want all permissions so: 4 (read) + 2 (write) + 1 (execute) = 7 for user
 > > (first position), no permissions, i.e. 0, for group (second position) and
