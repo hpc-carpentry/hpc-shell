@@ -145,7 +145,7 @@ system now:
 ```
 ssh yourUsername@{{ site.workshop_host_login }}
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 {% include /snippets/01/login_output.{{ site.workshop_host_id }} %}

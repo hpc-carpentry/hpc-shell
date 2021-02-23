@@ -28,7 +28,7 @@ Right now, all we see is something that looks like this:
 ~~~
 {{ site.workshop_host_prompt }}
 ~~~
-{: .bash}
+{: .language-bash}
 
 The dollar sign is a **prompt**, which shows us that the shell is waiting for
 input; your shell may use a different character as a prompt and may add
@@ -43,7 +43,7 @@ user, i.e., it shows us who the shell thinks we are:
 ~~~
 $ whoami
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 yourUsername
 ~~~
@@ -68,7 +68,7 @@ system to system.
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 {{ site.workshop_host_homedir }}/yourUsername
 ~~~
@@ -79,7 +79,7 @@ directory?
 ```
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 `ls` prints the names of the files and directories in the current directory in
 alphabetical order, arranged neatly into columns.
@@ -116,7 +116,7 @@ the directory you wish to create.
 ```
 $ mkdir documents
 ```
-{: .bash}
+{: .language-bash}
 
 Let's us `ls` again. What do we see?
 
@@ -128,7 +128,7 @@ there? We will use the `cd` (change directory) command to move around. Let's
 $ cd documents
 $ pwd
 ```
-{: .bash}
+{: .language-bash}
 ```
 ~/documents
 ```
@@ -148,7 +148,7 @@ $ cd {{ site.workshop_host_homedir }}/yourUserName
 $ cd ~
 $ cd
 ```
-{: .bash}
+{: .language-bash}
 
 A quick note on the structure of a UNIX (Linux/Mac/Android/Solaris/etc)
 filesystem. Directories and absolute paths (i.e. exact position in the system)
@@ -161,7 +161,7 @@ $ cd /
 $ ls
 $ cd ~
 ```
-{: .bash}
+{: .language-bash}
 ```
 bin   cvmfs  etc   initrd  lib64  localscratch  mnt  opt   project  root  sbin     srv  tmp  var
 boot  dev    home  lib     local  media         nix  proc  ram      run   scratch  sys  usr  work
@@ -220,7 +220,7 @@ $ pwd
 $ cd ..
 $ pwd
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 {{ site.workshop_host_homedir }}/yourUserName/documents
@@ -244,7 +244,7 @@ all the time.
 ```
 $ ls -a
 ```
-{: .bash}
+{: .language-bash}
 ```
 .  ..  .bash_logout  .bash_profile  .bashrc  documents  .emacs  .mozilla  .ssh
 ```
@@ -256,7 +256,7 @@ size in bytes, date last modified, permissions, and other things with `-l`.
 ```
 $ ls -l
 ```
-{: .bash}
+{: .language-bash}
 ```
 drwxr-xr-x 2 yourUsername tc001 4096 Jan 14 17:31 documents
 ```
@@ -271,7 +271,7 @@ We can also use multiple flags at the same time!
 ```
 $ ls -l -a
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 {{ site.workshop_host_prompt }} ls -la
@@ -296,7 +296,7 @@ generally looks something like this:
 ```
 $ command <flags/options> <arguments>
 ```
-{: .bash}
+{: .language-bash}
 
 So using `ls -l -a` on a different directory than the one we're in would look
 something like:
@@ -304,7 +304,7 @@ something like:
 ```
 $ ls -l -a ~/documents
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 drwxr-sr-x 2 yourUsername tc001 4096 Nov 28 09:58 .
@@ -322,7 +322,7 @@ what it is).
 ```
 $ man ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 LS(1)                          User Commands                          LS(1)
@@ -351,7 +351,7 @@ addition information For instance, with `ls`:
 ```
 $ ls --help
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 Usage: ls [OPTION]... [FILE]...
@@ -380,7 +380,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > ~~~
 > [remote]$ ls -j
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > 
 > ~~~
 > ls: invalid option -- 'j'
