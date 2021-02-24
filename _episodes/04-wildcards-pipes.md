@@ -3,17 +3,19 @@ title: "Wildcards and pipes"
 teaching: 45
 exercises: 10
 questions:
-- "How can I run a command on multiple files at once?"
-- "Is there an easy way of saving a command's output?"
+- How can I run a command on multiple files at once?
+- Is there an easy way of saving a command's output?
 objectives:
-- "Redirect a command's output to a file."
-- "Process a file instead of keyboard input using redirection."
-- "Construct command pipelines with two or more stages."
-- "Explain what usually happens if a program or pipeline isn't given any input to process."
+- Redirect a command's output to a file.
+- Process a file instead of keyboard input using redirection.
+- Construct command pipelines with two or more stages.
+- Explain what usually happens if a program or pipeline isn't given any input
+  to process.
 keypoints:
-- "The `*` wildcard is used as a placeholder to match any text that follows a pattern."
-- "Redirect a command's output to a file with `>`."
-- "Commands can be chained with `|`"
+- The `*` wildcard is used as a placeholder to match any text that follows a
+  pattern.
+- Redirect a command's output to a file with `>`.
+- Commands can be chained with `|`
 ---
 
 > ## Required files

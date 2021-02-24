@@ -3,15 +3,15 @@ title: "Scripts, variables, and loops"
 teaching: 45
 exercises: 10
 questions:
-- "How do I turn a set of commands into a program?"
+- How do I turn a set of commands into a program?
 objectives:
-- "Write a shell script"
-- "Understand and manipulate UNIX permissions"
-- "Understand shell variables and how to use them"
-- "Write a simple for loop"
+- Write a shell script
+- Understand and manipulate UNIX permissions
+- Understand shell variables and how to use them
+- Write a simple "for" loop.
 keypoints:
-- "A shell script is just a list of bash commands in a text file."
-- "`chmod +x script.sh` will give it permission to execute."
+- A shell script is just a list of bash commands in a text file.
+- `chmod +x script.sh` will give it permission to execute.
 ---
 
 We now know a lot of UNIX commands! Wouldn't it be great if we could save

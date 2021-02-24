@@ -3,12 +3,13 @@ title: "Connecting to the remote HPC system"
 teaching: 20 
 exercises: 10
 questions:
-- "How do I open a terminal?"
-- "How do I connect to a remote computer?"
+- How do I open a terminal?
+- How do I connect to a remote computer?
 objectives:
-- "Connect to a remote HPC system."
+- Connect to a remote HPC system.
 keypoints:
-- "To connect to a remote HPC system using SSH: `ssh yourUsername@remote.computer.address`"
+- To connect to a remote HPC system using SSH: 
+  `ssh yourUsername@remote.computer.address`
 ---
 
 ## Opening a Terminal
