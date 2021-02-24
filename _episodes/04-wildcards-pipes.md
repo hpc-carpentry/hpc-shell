@@ -48,13 +48,16 @@ $ ls
 {: .language-bash}
 
 ```
-bash-lesson.tar.gz                           SRR307024_2.fastq  SRR307028_1.fastq
-dmel-all-r6.19.gtf                           SRR307025_1.fastq  SRR307028_2.fastq
-dmel_unique_protein_isoforms_fb_2016_01.tsv  SRR307025_2.fastq  SRR307029_1.fastq
-gene_association.fb                          SRR307026_1.fastq  SRR307029_2.fastq
-SRR307023_1.fastq                            SRR307026_2.fastq  SRR307030_1.fastq
-SRR307023_2.fastq                            SRR307027_1.fastq  SRR307030_2.fastq
-SRR307024_1.fastq                            SRR307027_2.fastq
+bash-lesson.tar.gz                           SRR307026_1.fastq
+dmel-all-r6.19.gtf                           SRR307026_2.fastq
+dmel_unique_protein_isoforms_fb_2016_01.tsv  SRR307027_1.fastq
+gene_association.fb                          SRR307027_2.fastq
+SRR307023_1.fastq                            SRR307028_1.fastq
+SRR307023_2.fastq                            SRR307028_2.fastq
+SRR307024_1.fastq                            SRR307029_1.fastq
+SRR307024_2.fastq                            SRR307029_2.fastq
+SRR307025_1.fastq                            SRR307030_1.fastq
+SRR307025_2.fastq                            SRR307030_2.fastq
 ```
 {: .output}
 

@@ -163,8 +163,9 @@ $ cd ~
 ```
 {: .language-bash}
 ```
-bin   cvmfs  etc   initrd  lib64  localscratch  mnt  opt   project  root  sbin     srv  tmp  var
-boot  dev    home  lib     local  media         nix  proc  ram      run   scratch  sys  usr  work
+bin    dev   initrd  local         mnt  proc     root  scratch  tmp  work
+boot   etc   lib     localscratch  nix  project  run   srv      usr
+cvmfs  home  lib64   media         opt  ram      sbin  sys      var
 ```
 {: .output}
 

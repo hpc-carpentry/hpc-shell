@@ -58,11 +58,11 @@ Nano defines a number of *shortcut keys* (prefixed by the <kbd>Control</kbd> or
 <kbd>Ctrl</kbd> key) to perform actions such as saving the file or exiting the
 editor. Here are the shortcut keys for a few common actions:
 
-* <kbd>Ctrl</kbd>+<kbd>O</kbd> &mdash; save the file (into a current name or a new
-  name).
+* <kbd>Ctrl</kbd>+<kbd>O</kbd> &mdash; save the file (into a current name or a
+  new name).
 
-* <kbd>Ctrl</kbd>+<kbd>X</kbd> &mdash; exit the editor. If you have not saved your
-  file upon exiting, `nano` will ask you if you want to save.
+* <kbd>Ctrl</kbd>+<kbd>X</kbd> &mdash; exit the editor. If you have not saved
+  your file upon exiting, `nano` will ask you if you want to save.
 
 * <kbd>Ctrl</kbd>+<kbd>K</kbd> &mdash; cut ("kill") a text line. This command
   deletes a line and saves it on a clipboard. If repeated multiple times
@@ -180,8 +180,8 @@ draft.txt
 ```
 {: .output}
 
-**Renaming** &mdash; `draft.txt` isn't a very descriptive name. How do we go about
-changing it? It turns out that `mv` is also used to rename files and
+**Renaming** &mdash; `draft.txt` isn't a very descriptive name. How do we go
+about changing it? It turns out that `mv` is also used to rename files and
 directories. Although this may not seem intuitive at first, think of it as
 *moving* a file to be stored under a different name. The syntax is quite
 similar to moving files: `mv oldName newName`.
@@ -207,9 +207,9 @@ newname.testfile
 > typically contains text, for instance.
 {: .callout}
 
-**Copying** &mdash; What if we want to copy a file, instead of simply renaming or
-moving it? Use `cp` command (an abbreviated name for "copy"). This command has
-two different uses that work in the same way as `mv`:
+**Copying** &mdash; What if we want to copy a file, instead of simply renaming
+or moving it? Use `cp` command (an abbreviated name for "copy"). This command
+has two different uses that work in the same way as `mv`:
 
 - Copy to same directory (copied file is renamed): `cp file newFilename`
 - Copy to other directory (copied file retains original name): `cp file
@@ -340,7 +340,7 @@ $ wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 > have it, try this to get it faster than your neighbors:
 >
 > ```
-> $ aria2c {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz https://hpc-carpentry.github.io/hpc-shell/files/bash-lesson.tar.gz
+> $ aria2c {{ site.url }}{{ site.baseurl }}/files/bash-lesson.tar.gz
 > ```
 > {: .language-bash}
 >

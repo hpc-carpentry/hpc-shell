@@ -85,8 +85,9 @@ This process requires Ruby, Make, and Jekyll. You can find setup instructions
 Some links to example SWC workshop lessons for reference:
 
 * [Example Bash lesson](https://github.com/swcarpentry/shell-novice)
-* [Example Python lesson](https://github.com/swcarpentry/python-novice-inflammation)
-* [Example R lesson](https://github.com/swcarpentry/r-novice-gapminder) (uses R markdown files
-  instead of markdown)
+* [Example Python lesson](
+  https://github.com/swcarpentry/python-novice-inflammation)
+* [Example R lesson](https://github.com/swcarpentry/r-novice-gapminder)
+  (uses R markdown files instead of markdown)
 
 

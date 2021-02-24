@@ -91,7 +91,7 @@ $ ls -l
 -rw-rw-r-- 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
 -rw-rw-r-- 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
 -rw-rw-r-- 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
--rw-r--r-- 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
+-rw-r--r-- 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_is...
 drwxrwxr-x 2 yourUsername tc001     4096 Jan 16 19:16 fastq
 -rw-r--r-- 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
 -rw-rw-r-- 1 yourUsername tc001       15 Jan 16 19:17 test.txt
@@ -146,7 +146,7 @@ $ ls -l
 -rw-rw-r-- 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
 -rwxrwxr-x 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
 -rw-rw-r-- 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
--rw-r--r-- 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_isoforms_fb_2016_01.tsv
+-rw-r--r-- 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_is...
 drwxrwxr-x 2 yourUsername tc001     4096 Jan 16 19:16 fastq
 -rw-r--r-- 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
 -rw-rw-r-- 1 yourUsername tc001       15 Jan 16 19:17 test.txt
