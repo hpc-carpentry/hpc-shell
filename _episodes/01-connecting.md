@@ -8,8 +8,8 @@ questions:
 objectives:
 - Connect to a remote HPC system.
 keypoints:
-- To connect to a remote HPC system using SSH: 
-  `ssh yourUsername@remote.computer.address`
+- To connect to a remote HPC system using SSH,
+  run `ssh yourUsername@remote.computer.address`.
 ---
 
 ## Opening a Terminal

@@ -10,13 +10,13 @@ objectives:
 - Understand how to move, create, and delete files.
 keypoints:
 - Use `nano` to create or edit text files from a terminal.
-- `cat file1 [file2 ...]` prints the contents of one or more files to
+- Use `cat file1 [file2 ...]` to print the contents of one or more files to
   the terminal.
-- `mv old dir` moves a file or directory to another directory `dir`.
-- `mv old new` renames a file or directory.
-- `cp old new` copies a file.
-- `cp old dir` copies a file to another directory `dir`.
-- `rm path` deletes (removes) a file.
+- Use `mv old dir` to move a file or directory `old` to another directory `dir`.
+- Use `mv old new` to rename a file or directory `old` to a `new` name.
+- Use `cp old new` to copy a file under a new name or location.
+- Use `cp old dir` copies a file `old` into a directory `dir`.
+- Use `rm old` to delete (remove) a file.
 - File extensions are entirely arbitrary on UNIX systems.
 ---
 
