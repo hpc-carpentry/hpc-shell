@@ -103,10 +103,10 @@ PuTTY is likely the oldest, most well-known, and widely used software solution
 to take this approach.
 
 PuTTY is available for free download from
-[www.putty.org](http://www.putty.org/). Download the version that is correct
-for your operating system and install it as you would other software on your
-Windows system. Once installed it will be available through the start menu or
-similar.
+[https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). 
+Download the version that is correct for your operating system and install it 
+as you would other software on your Windows system. Once installed it will be 
+available through the start menu or similar.
 
 Running PuTTY will not initially produce a terminal but instead a window full
 of connection options. Putting the address of the remote system in the "Host
