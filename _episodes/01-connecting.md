@@ -139,7 +139,7 @@ that you will log in to.
 
 ### Linux, Mac and Windows Subsystem for Linux
 
-Once you have opened a terminal generate a public private SSH keypair by
+Once you have opened a terminal generate a public private SSH key pair by
 using 
 
 ```
