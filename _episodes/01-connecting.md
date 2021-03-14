@@ -145,6 +145,8 @@ using
 ```
 ssh-keygen -o -a 100 -t rsa -b 4096 -f ~/.ssh/key_for_remote_computer
 ```
+{: .language-bash}
+
 where
 
 - ssh-keygen is the command to generate the key pair
@@ -197,6 +199,7 @@ ssh yourUsername@{{ site.workshop_host_login }}
 {: .language-bash}
 
 or
+
 ```
 ssh -i ~/.ssh/key_for_remote_computer yourUsername@{{ site.workshop_host_login }}
 ```
