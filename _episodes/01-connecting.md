@@ -5,11 +5,14 @@ exercises: 10
 questions:
 - How do I open a terminal?
 - How do I connect to a remote computer?
+- What is an SSH key?
 objectives:
 - Connect to a remote HPC system.
 keypoints:
-- To connect to a remote HPC system using SSH,
+- To connect to a remote HPC system using SSH and a password,
   run `ssh yourUsername@remote.computer.address`.
+- To connect to a remote HPC system using SSH and an SSH key,
+  run `ssh -i ~/.ssh/key_for_remote_computer yourUsername@remote.computer.address`.
 ---
 
 ## Opening a Terminal
@@ -33,10 +36,6 @@ workflow for Linux users. If this is something that you do not know how to do
 then a quick search on the Internet for "how to open a terminal window in" with
 your particular Linux flavour appended to the end should quickly give you the
 directions you need.
-
-A very popular version of Linux is Ubuntu. There are many ways to open a
-terminal window in Ubuntu but a very fast way is to use the terminal shortcut
-key sequence: Ctrl+Alt+T.
 
 ### Mac
 
@@ -129,6 +128,54 @@ For those logging in with PuTTY it would likely be best to cover the terminal
 basics already mentioned above before moving on to navigating the remote
 system.
 
+## Creating an SSH key
+
+SSH keys are an alternative method for authentication to obtain access to 
+remote computing systems. They can also be used for authentication when
+transferring files or for accessing version control systems. In this section
+you will create a pair of SSH keys, a private key which you keep on your
+own computer and a public key which is placed on the remote HPC system
+that you will log in to.
+
+### Linux, Mac and Windows Subsystem for Linux
+
+Once you have opened a terminal generate a public private SSH keypair by
+using 
+
+```
+ssh-keygen -o -a 100 -t rsa -b 4096 -f ~/.ssh/key_for_remote_computer
+```
+where
+
+- ssh-keygen is the command to generate the key pair
+- -o specifies to use a strong format to save the key
+- -a 100 increases the strength of encryption with your passphrase
+- -t rsa specifies the encryption method used, in this case 
+[RSA or Rivest–Shamir–Adleman 
+encryption](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+- -f filename specifies the name of the ssh key, by default these are 
+stored in the directory ~/.ssh
+
+It is helpful to strengthen the security of your key by using a password.
+Check the director ~/.ssh which should contain two new files 
+~/.ssh/key_for_remote_computer.pub and 
+~/.ssh/key_for_remote_computer , the key with the .pub extension is the
+public key. You should give this to the person managing access of the
+remote system you want to log in to. The private key remains with you.
+If someone obtains the private key and it does not have a password,
+it can be used to log into systems where the public key has been placed,
+so be careful with your ssh private keys. If you think they have been
+compromised, ask people managing systems you have access to, to remove
+compromised keys and replace them with new ones you have generated.
+
+### Windows
+
+On Windows you can use
+- puttygen, see the Putty 
+[documentation](https://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html)
+- MobaKeyGen, see the MoabXterm 
+[documentation](https://mobaxterm.mobatek.net/documentation.html) 
+
 ## Logging onto the system
 
 With all of this in mind, let's connect to a remote HPC system. In this
@@ -140,11 +187,18 @@ example computer, we will use SSH (if you are using PuTTY, see above).
 
 SSH allows us to connect to UNIX computers remotely, and use them as if they
 were our own. The general syntax of the connection command follows the format
-`ssh yourUsername@some.computer.address` Let's attempt to connect to the HPC
-system now:
+`ssh yourUsername@some.computer.address` and 
+`ssh -i ~/.ssh/key_for_remote_computer yourUsername@remote.computer.address` 
+when using SSH keys.Let's attempt to connect to the HPC system now:
 
 ```
 ssh yourUsername@{{ site.workshop_host_login }}
+```
+{: .language-bash}
+
+or
+```
+ssh -i ~/.ssh/key_for_remote_computer yourUsername@{{ site.workshop_host_login }}
 ```
 {: .language-bash}
 
