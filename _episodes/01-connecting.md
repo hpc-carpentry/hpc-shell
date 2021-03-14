@@ -1,6 +1,6 @@
 ---
 title: "Connecting to the remote HPC system"
-teaching: 20 
+teaching: 25 
 exercises: 10
 questions:
 - How do I open a terminal?
@@ -159,7 +159,7 @@ encryption](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 stored in the directory ~/.ssh
 
 It is helpful to strengthen the security of your key by using a password.
-Check the director ~/.ssh which should contain two new files 
+Check the directory ~/.ssh which should contain two new files 
 ~/.ssh/key_for_remote_computer.pub and 
 ~/.ssh/key_for_remote_computer , the key with the .pub extension is the
 public key. You should give this to the person managing access of the
