@@ -18,6 +18,9 @@ __version__ = '0.3'
 # Where to look for source Markdown files.
 SOURCE_DIRS = ['', '_episodes', '_extras']
 
+# Where to look for snippet files (which should be Markdown syntax)
+SNIPPET_DIR = os.path.join('_includes', 'snippets_library')
+
 # Where to look for source Rmd files.
 SOURCE_RMD_DIRS = ['_episodes_rmd']
 
@@ -80,12 +83,15 @@ KNOWN_CODEBLOCKS = {
     'output',
     'source',
     'language-bash',
-    'language-html',
+    'html',
     'language-make',
     'language-matlab',
     'language-python',
     'language-r',
-    'language-sql'
+    'language-shell',
+    'language-sql',
+    'bash',
+    'python'
 }
 
 # What fields are required in teaching episode metadata?
@@ -107,7 +113,7 @@ BREAK_METADATA_FIELDS = {
 
 # How long are lines allowed to be?
 # Please keep this in sync with .editorconfig!
-MAX_LINE_LEN = 80
+MAX_LINE_LEN = 79
 
 
 def main():
@@ -161,7 +167,7 @@ def parse_args():
                         default=False,
                         action="store_true",
                         dest='permissive',
-                        help='Do not raise an error even if issues are detected')
+                        help='Do not raise an error even if there are issues')
 
     args, extras = parser.parse_known_args()
     require(args.parser is not None,
@@ -266,6 +272,13 @@ def read_all_markdown(source_dir, parser):
             data = read_markdown(parser, filename)
             if data:
                 result[filename] = data
+
+    # Also read our snippets
+    snippet_pattern = os.path.join(SNIPPET_DIR, '**/*.snip')
+    for filename in glob.glob(snippet_pattern, recursive=True):
+        data = read_markdown(parser, filename)
+        if data:
+            result[filename] = data
     return result
 
 
@@ -357,8 +370,14 @@ class CheckBase:
         """Check the raw text of the lesson body."""
 
         if self.args.line_lengths:
-            over = [i for (i, l, n) in self.lines if (
-                n > MAX_LINE_LEN) and (not l.startswith('!'))]
+            code = '^[> ]*{{'   # regular expression for [> > > ]{{ site... }}
+            link = '^[[].+[]]:' # regex for [link-abbrv]: address
+            http = '^.*http'    # regex for ...http:
+            over = [i for (i, l, n) in self.lines if (n > MAX_LINE_LEN) and
+                                                  (not l.startswith('!')) and
+                                                  (not re.search(code, l)) and
+                                                  (not re.search(link, l)) and
+                                                  (not re.search(http, l))  ]
             self.reporter.check(not over,
                                 self.filename,
                                 'Line(s) too long: {0}',
@@ -462,6 +481,8 @@ class CheckBase:
 
 class CheckNonJekyll(CheckBase):
     """Check a file that isn't translated by Jekyll."""
+    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
+        super().__init__(args, filename, metadata, metadata_len, text, lines, doc)
 
     def check_metadata(self):
         self.reporter.check(self.metadata is None,
@@ -553,7 +574,8 @@ CHECKERS = [
     (re.compile(r'index\.md'), CheckIndex),
     (re.compile(r'reference\.md'), CheckReference),
     (re.compile(r'_episodes/.*\.md'), CheckEpisode),
-    (re.compile(r'.*\.md'), CheckGeneric)
+    (re.compile(r'.*\.md'), CheckGeneric),
+    (re.compile(r'.*\.snip'), CheckNonJekyll)
 ]
 
 

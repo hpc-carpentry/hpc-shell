@@ -60,8 +60,8 @@ the Windows start menu.
 >   Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 > * Use the Windows [Powershell](
 https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
-> * Read up on [Using a Unix/Linux emulator (Cygwin) or Secure Shell (SSH) client
->   (Putty)](http://faculty.smu.edu/reynolds/unixtut/windows.html)
+> * Read up on [Using a Unix/Linux emulator (Cygwin) or Secure Shell (SSH)
+>   client (Putty)](http://faculty.smu.edu/reynolds/unixtut/windows.html)
 >
 > > ## Warning
 > >
