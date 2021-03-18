@@ -1,6 +1,7 @@
 *.pyc
 *~
 .DS_Store
+.bundle
 .ipynb_checkpoints
 .jekyll-cache
 .sass-cache

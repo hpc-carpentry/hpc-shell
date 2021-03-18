@@ -318,14 +318,7 @@ The output is nearly unintelligible since there is so much of it. Let's send
 the output of that `grep` command to `head` so we can just take a peek at the
 first line. The `|` operator lets us send output from one command to the next:
 
-```
-$ grep Act5C dmel-all-r6.19.gtf | head -n 1
-```
-{: .language-bash}
-```
-X	FlyBase	gene	5900861	5905399	.	+	.	gene_id "FBgn0000042"; gene_symbol "Act5C";
-```
-{: .output}
+{% include {{ site.snippets }}/04/grep-act5c.snip %}
 
 Nice work, we sent the output of `grep` to `head`. Let's try counting the
 number of entries for Act5C with `wc -l`. We can do the same trick to send

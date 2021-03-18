@@ -2,6 +2,8 @@
 # Values for this lesson.
 #------------------------------------------------------------
 
+snippets: "/snippets"
+
 # Which carpentry is this ("swc", "dc", "lc", or "cp")?
 # swc: Software Carpentry
 # dc: Data Carpentry
