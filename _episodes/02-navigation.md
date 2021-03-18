@@ -1,6 +1,6 @@
 ---
 title: "Moving around and looking at things"
-teaching: 15 
+teaching: 15
 exercises: 5
 questions:
 - How do I navigate and look around the system?
@@ -74,7 +74,7 @@ $ pwd
 ~~~
 {: .output}
 
-So, we know where we are. How do we look and see what's in our current 
+So, we know where we are. How do we look and see what's in our current
 directory?
 ```
 $ ls
@@ -382,7 +382,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > [remote]$ ls -j
 > ~~~
 > {: .language-bash}
-> 
+>
 > ~~~
 > ls: invalid option -- 'j'
 > Try 'ls --help' for more information.
@@ -417,7 +417,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > > 2. No: `/` stands for the root directory.
 > > 3. No: Amanda's home directory is `/Users/amanda`.
 > > 4. No: this goes up two levels, i.e. ends in `/Users`.
-> > 5. Yes: `~` stands for the user's home directory, in this case 
+> > 5. Yes: `~` stands for the user's home directory, in this case
 > >    `/Users/amanda`.
 > > 6. No: this would navigate into a directory `home` in the current directory
 > >    if it exists.

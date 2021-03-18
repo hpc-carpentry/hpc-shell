@@ -22,7 +22,7 @@ keypoints:
 >
 > If you didn't get them in the last lesson, make sure to download the example
 > files used in the next few sections:
-> 
+>
 > **Using wget**: `wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz`
 >
 > **Using a web browser**:
@@ -145,12 +145,12 @@ $ wc -l *
 > file with "fb" in it?
 >
 > > ## Solution
-> > 
+> >
 > > ```
 > > wc -l *fb*
 > > ```
 > > {: .language-bash}
-> > 
+> >
 > > i.e. *anything or nothing* then `fb` then *anything or nothing*
 > {: .solution}
 {: .challenge}
@@ -161,7 +161,7 @@ $ wc -l *
 > "fastq" and move all of our .fastq files there in one `mv` command.
 >
 > > ## Solution
-> > 
+> >
 > > ```
 > > mkdir fastq
 > > mv *.fastq fastq/
@@ -318,14 +318,7 @@ The output is nearly unintelligible since there is so much of it. Let's send
 the output of that `grep` command to `head` so we can just take a peek at the
 first line. The `|` operator lets us send output from one command to the next:
 
-```
-$ grep Act5C dmel-all-r6.19.gtf | head -n 1
-```
-{: .language-bash}
-```
-X	FlyBase	gene	5900861	5905399	.	+	.	gene_id "FBgn0000042"; gene_symbol "Act5C";
-```
-{: .output}
+{% include {{ site.snippets }}/04/grep-act5c.snip %}
 
 Nice work, we sent the output of `grep` to `head`. Let's try counting the
 number of entries for Act5C with `wc -l`. We can do the same trick to send
@@ -350,12 +343,12 @@ the number of lines from that file.
 > shell to do this.)
 >
 > > ## Solution
-> > 
+> >
 > > ```
 > > ls fastq/ | wc -l
 > > ```
 > > {: .language-bash}
-> > 
+> >
 > > Output of `ls` is one line per item, when chaining commands together like
 > > this, so counting lines gives the number of files.
 > {: .solution}
@@ -376,12 +369,12 @@ the number of lines from that file.
 > the file itself)?
 >
 > > ## Solution
-> > 
+> >
 > > ```
 > > zcat gene_association.fb.gz | head
 > > ```
 > > {: .language-bash}
-> > 
+> >
 > > The `head` command without any options shows the first 10 lines of a file.
 > {: .solution}
 {: .challenge}
