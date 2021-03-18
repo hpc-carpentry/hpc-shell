@@ -21,7 +21,6 @@ essentially a text file containing a list of UNIX commands to be executed in a
 sequential manner. These shell scripts can be run whenever we want, and are a
 great way to automate our work.
 
-
 ## Writing a Script
 
 So how do we write a shell script, exactly? It turns out we can do this with a
@@ -48,11 +47,11 @@ echo "Our script worked!"
 ```
 {: .language-bash}
 
-Ready to run our program? 
+Ready to run our program?
 Let's try running it:
 
 ```
-$ demo.sh 
+$ demo.sh
 ```
 {: .language-bash}
 
@@ -109,15 +108,15 @@ working left to right.
    `x` bits indicate permission to **R**ead, **W**rite, and e**X**ecute a file.
    There are three fields of `rwx` permissions following the spot for `d`. If a
    user is missing a permission to do something, it's indicated by a `-`.
-   - The first set of `rwx` are the permissions that the owner has (in this
-     case the owner is `yourUsername`).
-   - The second set of `rwx`s are permissions that other members of the owner's
-     group share (in this case, the group is named `tc001`).
-   - The third set of `rwx`s are permissions that anyone else with access to
-     this computer can do with a file. Though files are typically created with
-     read permissions for everyone, typically the permissions on your home
-     directory prevent others from being able to access the file in the first
-     place.
+   1. The first set of `rwx` are the permissions that the owner has (in this
+      case the owner is `yourUsername`).
+   1. The second set of `rwx`s are permissions that other members of the
+      owner's group share (in this case, the group is named `tc001`).
+   1. The third set of `rwx`s are permissions that anyone else with access to
+      this computer can do with a file. Though files are typically created with
+      read permissions for everyone, typically the permissions on your home
+      directory prevent others from being able to access the file in the first
+      place.
 2. **References:** This counts the number of references ([hard
    links](https://en.wikipedia.org/wiki/Hard_link)) to the item (file, folder,
    symbolic link or "shortcut").
@@ -154,7 +153,7 @@ drwxrwxr-x 2 yourUsername tc001     4096 Jan 16 19:16 fastq
 ```
 {: .output}
 
-Now that we have executable permissions for that file, we can run it. 
+Now that we have executable permissions for that file, we can run it.
 
 ```
 $ ./demo.sh
@@ -397,11 +396,11 @@ gene_association.fb.gz
 > Is there a way to only run the loop on fastq files ending in `_1.fastq`?
 >
 > > ## Solution
-> > 
+> >
 > > Create the following script in a file called `head_all.sh`
 > > ```
 > > #!/bin/bash
-> > 
+> >
 > > for FILE in *.fastq
 > > do
 > >    echo $FILE
@@ -435,11 +434,11 @@ gene_association.fb.gz
 > with ".processed" added to it?
 >
 > > ## Solution
-> > 
+> >
 > > Create the following script in a file called `process.sh`
 > > ```
 > > #!/bin/bash
-> > 
+> >
 > > for FILE in *
 > > do
 > >    echo ${FILE}.processed
@@ -453,7 +452,7 @@ gene_association.fb.gz
 > >
 > > ```
 > > #!/bin/bash
-> > 
+> >
 > > for FILE in $(find . -max-depth 1 -type f)
 > > do
 > >    echo ${FILE}.processed
@@ -465,8 +464,7 @@ gene_association.fb.gz
 > {: .solution}
 {: .challenge}
 
-
-> ## Special permissions 
+> ## Special permissions
 >
 > What if we want to give different sets of users different permissions.
 > `chmod` actually accepts special numeric codes instead of stuff like `chmod

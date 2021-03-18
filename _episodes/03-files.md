@@ -31,7 +31,6 @@ $ cd hpc-test
 ```
 {: .language-bash}
 
-
 ## Creating and Editing Text Files
 
 When working on an HPC system, we will frequently need to create or edit text
@@ -72,7 +71,6 @@ editor. Here are the shortcut keys for a few common actions:
 * <kbd>Ctrl</kbd>+<kbd>U</kbd> &mdash; paste the cut text line (or lines). This
   command can be repeated to paste the same text elsewhere.
 
-
 > ## Using `vim` as a text editor
 >
 > From time to time, you may encounter the `vim` text editor. Although `vim`
@@ -103,7 +101,6 @@ $ ls
 draft.txt
 ```
 {: .output}
-
 
 ## Reading Files
 
@@ -146,7 +143,6 @@ it's "share and thrive".
 > print the contents of `draft.txt`, `chap1.txt`, and `chap2.txt`.
 {: .challenge}
 
-
 ## Creating Directory
 
 We've successfully created a file. What about a directory? We've actually done
@@ -161,7 +157,6 @@ $ ls
 draft.txt  files
 ```
 {: .output}
-
 
 ## Moving, Renaming, Copying Files
 
