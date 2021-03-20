@@ -177,9 +177,9 @@ The flag `-b` sets the number of bits in the key.
 The default is 2048. EdDSA uses a fixed key length,
 so this flag would have no effect.
 
-> *N.B.:* For a deeper dive on SSH security and some of the
-> flags set here, an excellent resource is [Secure Secure Shell](
-> https://stribika.github.io/2015/01/04/secure-secure-shell.html).
+> For more information on SSH security and some of the
+> flags set here, an excellent resource is 
+> [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html).
 
 When prompted, enter a strong password that you will remember. 
 Cryptography is only as good as the weakest link, and this will be 
