@@ -144,7 +144,9 @@ since existing SSH keys are overwritten,
 ```
 $ ls ~/.ssh/
 ```
-then generate a new public-private keypair,
+{: .language-bash}
+
+then generate a new public-private key pair,
 ```
 $ ssh-keygen -t ed25519 -a 100 -f ~/.ssh/id_{{ site.workshop_host }}_ed25519
 ```
