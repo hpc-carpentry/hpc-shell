@@ -152,15 +152,15 @@ $ ssh-keygen -t ed25519 -a 100 -f ~/.ssh/id_{{ site.workshop_host }}_ed25519
 ```
 {: .language-bash}
 
-* `-o` (no default): use the OpenSSH key format,
+- `-o` (no default): use the OpenSSH key format,
   rather than PEM.
-* `-a` (default is 16): number of rounds of passphrase derivation;
+- `-a` (default is 16): number of rounds of passphrase derivation;
   increase to slow down brute force attacks.
-* `-t` (default is [rsa](https://en.wikipedia.org/wiki/RSA_(cryptosystem))):
+- `-t` (default is [rsa](https://en.wikipedia.org/wiki/RSA_(cryptosystem))):
   specify the "type" or cryptographic algorithm. 
   [ed25519](https://en.wikipedia.org/wiki/EdDSA)
  is faster and shorter than RSA for comparable strength.
-* `-f` (default is /home/user/.ssh/id_algo): filename to store your keys.
+- `-f` (default is /home/user/.ssh/id_algorithm): filename to store your keys.
   If you already have SSH keys, make sure you specify a different name:
   `ssh-keygen` will overwrite the default key if you don't specify!
 
@@ -177,6 +177,8 @@ The flag `-b` sets the number of bits in the key.
 The default is 2048. EdDSA uses a fixed key length,
 so this flag would have no effect.
 
+> #### Further information
+> 
 > For more information on SSH security and some of the
 > flags set here, an excellent resource is 
 > [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html).
@@ -193,7 +195,7 @@ the public key (`~/.ssh/key_{{ site.workshop_host }}_ed25519.pub` or
 requested by the system administrators, the *public* key is the one
 to provide.
 
-> ## Private keys are your private identity
+> ##### Private keys are your private identity
 >
 > A private key that is visible to anyone but you should be considered compromised,
 > and must be destroyed. This includes having improper permissions on the directory
