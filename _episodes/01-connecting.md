@@ -199,6 +199,14 @@ to provide.
 > Protect this key as if it unlocks your front door. In many ways, it does.
 {: .caution}
 
+> #### Further information
+> 
+> For more information on SSH security and some of the
+> flags set here, an excellent resource is 
+> [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html).
+{: .callout}
+
+
 ### Windows
 
 On Windows you can use
