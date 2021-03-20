@@ -139,36 +139,67 @@ that you will log in to.
 
 ### Linux, Mac and Windows Subsystem for Linux
 
-Once you have opened a terminal generate a public private SSH key pair by
-using 
-
+Once you have opened a terminal check for existing SSH keys and filenames
+since existing SSH keys are overwritten,
 ```
-ssh-keygen -o -a 100 -t rsa -b 4096 -f ~/.ssh/key_for_remote_computer
+$ ls ~/.ssh/
+```
+then generate a new public-private keypair,
+```
+$ ssh-keygen -t ed25519 -a 100 -f ~/.ssh/id_{{ site.workshop_host }}_ed25519
 ```
 {: .language-bash}
 
-where
+* `-o` (no default): use the OpenSSH key format,
+  rather than PEM.
+* `-a` (default is 16): number of rounds of passphrase derivation;
+  increase to slow down brute force attacks.
+* `-t` (default is [rsa](https://en.wikipedia.org/wiki/RSA_(cryptosystem))):
+  specify the "type" or cryptographic algorithm. 
+  [ed25519](https://en.wikipedia.org/wiki/EdDSA)
+ is faster and shorter than RSA for comparable strength.
+* `-f` (default is /home/user/.ssh/id_algo): filename to store your keys.
+  If you already have SSH keys, make sure you specify a different name:
+  `ssh-keygen` will overwrite the default key if you don't specify!
 
-- ssh-keygen is the command to generate the key pair
-- -o specifies to use a strong format to save the key
-- -a 100 increases the strength of encryption with your passphrase
-- -t rsa specifies the encryption method used, in this case 
-[RSA or Rivest–Shamir–Adleman 
-encryption](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
-- -f filename specifies the name of the ssh key, by default these are 
-stored in the directory ~/.ssh
+If EcDSA is not available, use the older (but strong and trusted)
+[RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) cryptography:
 
-It is helpful to strengthen the security of your key by using a password.
-Check the directory ~/.ssh which should contain two new files 
-~/.ssh/key_for_remote_computer.pub and 
-~/.ssh/key_for_remote_computer , the key with the .pub extension is the
-public key. You should give this to the person managing access of the
-remote system you want to log in to. The private key remains with you.
-If someone obtains the private key and it does not have a password,
-it can be used to log into systems where the public key has been placed,
-so be careful with your ssh private keys. If you think they have been
-compromised, ask people managing systems you have access to, to remove
-compromised keys and replace them with new ones you have generated.
+```
+$ ls ~/.ssh/
+$ ssh-keygen -o -a 100 -t rsa -b 4096 -f ~/.ssh/id_{{ site.workshop_host }}_rsa
+```
+{: .language-bash}
+ 
+The flag `-b` sets the number of bits in the key.
+The default is 2048. EdDSA uses a fixed key length,
+so this flag would have no effect.
+
+> *N.B.:* For a deeper dive on SSH security and some of the
+> flags set here, an excellent resource is [Secure Secure Shell](
+> https://stribika.github.io/2015/01/04/secure-secure-shell.html).
+
+When prompted, enter a strong password that you will remember. 
+Cryptography is only as good as the weakest link, and this will be 
+used to connect to a powerful, precious, computational resource.
+
+Take a look in `~/.ssh` (use `ls ~/.ssh`). You should see the two 
+new files: your private key (`~/.ssh/key_{{ site.workshop_host }}_ed25519` 
+or `~/.ssh/key_{{ site.workshop_host }}_rsa`) and 
+the public key (`~/.ssh/key_{{ site.workshop_host }}_ed25519.pub` or
+`~/.ssh/key_{{ site.workshop_host }}_rsa.pub`). If a key is 
+requested by the system administrators, the *public* key is the one
+to provide.
+
+> ## Private keys are your private identity
+>
+> A private key that is visible to anyone but you should be considered compromised,
+> and must be destroyed. This includes having improper permissions on the directory
+> it (or a copy) is stored in, traversing any network in the clear, attachment on unencrypted
+> email, and even displaying the key (which is ASCII text) in your terminal window.
+>
+> Protect this key as if it unlocks your front door. In many ways, it does.
+{: .caution}
 
 ### Windows
 
@@ -191,17 +222,22 @@ SSH allows us to connect to UNIX computers remotely, and use them as if they
 were our own. The general syntax of the connection command follows the format
 `ssh yourUsername@some.computer.address` and 
 `ssh -i ~/.ssh/key_for_remote_computer yourUsername@remote.computer.address` 
-when using SSH keys.Let's attempt to connect to the HPC system now:
+when using SSH keys.  Let's attempt to connect to the HPC system now:
 
 ```
 ssh yourUsername@{{ site.workshop_host_login }}
 ```
 {: .language-bash}
 
+```
+ssh -i ~/.ssh/key_{{ site.workshop_host }}_ed25519 yourUsername@{{ site.workshop_host_login }}
+```
+{: .language-bash}
+
 or
 
 ```
-ssh -i ~/.ssh/key_for_remote_computer yourUsername@{{ site.workshop_host_login }}
+ssh -i ~/.ssh/key_{{ site.workshop_host }}_rsa yourUsername@{{ site.workshop_host_login }}
 ```
 {: .language-bash}
 
