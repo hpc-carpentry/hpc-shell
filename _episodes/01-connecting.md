@@ -164,7 +164,7 @@ $ ssh-keygen -t ed25519 -a 100 -f ~/.ssh/id_{{ site.workshop_host }}_ed25519
   If you already have SSH keys, make sure you specify a different name:
   `ssh-keygen` will overwrite the default key if you don't specify!
 
-If EcDSA is not available, use the older (but strong and trusted)
+If ed25519 is not available, use the older (but strong and trusted)
 [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) cryptography:
 
 ```
@@ -193,8 +193,9 @@ to provide.
 >
 > A private key that is visible to anyone but you should be considered compromised,
 > and must be destroyed. This includes having improper permissions on the directory
-> it (or a copy) is stored in, traversing any network in the clear, attachment on unencrypted
-> email, and even displaying the key (which is ASCII text) in your terminal window.
+> it (or a copy) is stored in, traversing any network in the clear, attachment on 
+> unencrypted email, and even displaying the key (which is ASCII text) in your 
+> terminal window.
 >
 > Protect this key as if it unlocks your front door. In many ways, it does.
 {: .caution}
