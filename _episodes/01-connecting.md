@@ -227,14 +227,10 @@ example computer, we will use SSH (if you are using PuTTY, see above).
 
 SSH allows us to connect to UNIX computers remotely, and use them as if they
 were our own. The general syntax of the connection command follows the format
-`ssh yourUsername@some.computer.address` and 
 `ssh -i ~/.ssh/key_for_remote_computer yourUsername@remote.computer.address` 
-when using SSH keys.  Let's attempt to connect to the HPC system now:
-
-```
-ssh yourUsername@{{ site.workshop_host_login }}
-```
-{: .language-bash}
+when using SSH keys and `ssh yourUsername@some.computer.address` if only
+password access is available.  Let's attempt to connect to the HPC system
+now:
 
 ```
 ssh -i ~/.ssh/key_{{ site.workshop_host }}_ed25519 yourUsername@{{ site.workshop_host_login }}
@@ -247,6 +243,14 @@ or
 ssh -i ~/.ssh/key_{{ site.workshop_host }}_rsa yourUsername@{{ site.workshop_host_login }}
 ```
 {: .language-bash}
+
+or if SSH keys have not been enabled 
+
+```
+ssh yourUsername@{{ site.workshop_host_login }}
+```
+{: .language-bash}
+
 
 ```
 {% include /snippets/01/login_output.{{ site.workshop_host_id }} %}
