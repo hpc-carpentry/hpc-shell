@@ -1,15 +1,18 @@
 ---
 title: "Connecting to the remote HPC system"
-teaching: 20 
+teaching: 25 
 exercises: 10
 questions:
 - How do I open a terminal?
 - How do I connect to a remote computer?
+- What is an SSH key?
 objectives:
 - Connect to a remote HPC system.
 keypoints:
-- To connect to a remote HPC system using SSH,
+- To connect to a remote HPC system using SSH and a password,
   run `ssh yourUsername@remote.computer.address`.
+- To connect to a remote HPC system using SSH and an SSH key,
+  run `ssh -i ~/.ssh/key_for_remote_computer yourUsername@remote.computer.address`.
 ---
 
 ## Opening a Terminal
@@ -33,10 +36,6 @@ workflow for Linux users. If this is something that you do not know how to do
 then a quick search on the Internet for "how to open a terminal window in" with
 your particular Linux flavour appended to the end should quickly give you the
 directions you need.
-
-A very popular version of Linux is Ubuntu. There are many ways to open a
-terminal window in Ubuntu but a very fast way is to use the terminal shortcut
-key sequence: Ctrl+Alt+T.
 
 ### Mac
 
@@ -104,10 +103,10 @@ PuTTY is likely the oldest, most well-known, and widely used software solution
 to take this approach.
 
 PuTTY is available for free download from
-[www.putty.org](http://www.putty.org/). Download the version that is correct
-for your operating system and install it as you would other software on your
-Windows system. Once installed it will be available through the start menu or
-similar.
+[https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). 
+Download the version that is correct for your operating system and install it 
+as you would other software on your Windows system. Once installed it will be 
+available through the start menu or similar.
 
 Running PuTTY will not initially produce a terminal but instead a window full
 of connection options. Putting the address of the remote system in the "Host
@@ -129,6 +128,94 @@ For those logging in with PuTTY it would likely be best to cover the terminal
 basics already mentioned above before moving on to navigating the remote
 system.
 
+## Creating an SSH key
+
+SSH keys are an alternative method for authentication to obtain access to 
+remote computing systems. They can also be used for authentication when
+transferring files or for accessing version control systems. In this section
+you will create a pair of SSH keys, a private key which you keep on your
+own computer and a public key which is placed on the remote HPC system
+that you will log in to.
+
+### Linux, Mac and Windows Subsystem for Linux
+
+Once you have opened a terminal check for existing SSH keys and filenames
+since existing SSH keys are overwritten,
+```
+$ ls ~/.ssh/
+```
+{: .language-bash}
+
+then generate a new public-private key pair,
+```
+$ ssh-keygen -t ed25519 -a 100 -f ~/.ssh/id_{{ site.workshop_host }}_ed25519
+```
+{: .language-bash}
+
+- `-o` (no default): use the OpenSSH key format,
+  rather than PEM.
+- `-a` (default is 16): number of rounds of passphrase derivation;
+  increase to slow down brute force attacks.
+- `-t` (default is [rsa](https://en.wikipedia.org/wiki/RSA_(cryptosystem))):
+  specify the "type" or cryptographic algorithm. 
+  [ed25519](https://en.wikipedia.org/wiki/EdDSA)
+ is faster and shorter than RSA for comparable strength.
+- `-f` (default is /home/user/.ssh/id_algorithm): filename to store your keys.
+  If you already have SSH keys, make sure you specify a different name:
+  `ssh-keygen` will overwrite the default key if you don't specify!
+
+If ed25519 is not available, use the older (but strong and trusted)
+[RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) cryptography:
+
+```
+$ ls ~/.ssh/
+$ ssh-keygen -o -a 100 -t rsa -b 4096 -f ~/.ssh/id_{{ site.workshop_host }}_rsa
+```
+{: .language-bash}
+ 
+The flag `-b` sets the number of bits in the key.
+The default is 2048. EdDSA uses a fixed key length,
+so this flag would have no effect.
+
+When prompted, enter a strong password that you will remember. 
+Cryptography is only as good as the weakest link, and this will be 
+used to connect to a powerful, precious, computational resource.
+
+Take a look in `~/.ssh` (use `ls ~/.ssh`). You should see the two 
+new files: your private key (`~/.ssh/key_{{ site.workshop_host }}_ed25519` 
+or `~/.ssh/key_{{ site.workshop_host }}_rsa`) and 
+the public key (`~/.ssh/key_{{ site.workshop_host }}_ed25519.pub` or
+`~/.ssh/key_{{ site.workshop_host }}_rsa.pub`). If a key is 
+requested by the system administrators, the *public* key is the one
+to provide.
+
+> ##### Private keys are your private identity
+>
+> A private key that is visible to anyone but you should be considered compromised,
+> and must be destroyed. This includes having improper permissions on the directory
+> it (or a copy) is stored in, traversing any network in the clear, attachment on 
+> unencrypted email, and even displaying the key (which is ASCII text) in your 
+> terminal window.
+>
+> Protect this key as if it unlocks your front door. In many ways, it does.
+{: .caution}
+
+> #### Further information
+> 
+> For more information on SSH security and some of the
+> flags set here, an excellent resource is 
+> [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html).
+{: .callout}
+
+
+### Windows
+
+On Windows you can use
+- puttygen, see the Putty 
+[documentation](https://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html)
+- MobaKeyGen, see the MoabXterm 
+[documentation](https://mobaxterm.mobatek.net/documentation.html) 
+
 ## Logging onto the system
 
 With all of this in mind, let's connect to a remote HPC system. In this
@@ -140,13 +227,30 @@ example computer, we will use SSH (if you are using PuTTY, see above).
 
 SSH allows us to connect to UNIX computers remotely, and use them as if they
 were our own. The general syntax of the connection command follows the format
-`ssh yourUsername@some.computer.address` Let's attempt to connect to the HPC
-system now:
+`ssh -i ~/.ssh/key_for_remote_computer yourUsername@remote.computer.address` 
+when using SSH keys and `ssh yourUsername@some.computer.address` if only
+password access is available.  Let's attempt to connect to the HPC system
+now:
+
+```
+ssh -i ~/.ssh/key_{{ site.workshop_host }}_ed25519 yourUsername@{{ site.workshop_host_login }}
+```
+{: .language-bash}
+
+or
+
+```
+ssh -i ~/.ssh/key_{{ site.workshop_host }}_rsa yourUsername@{{ site.workshop_host_login }}
+```
+{: .language-bash}
+
+or if SSH keys have not been enabled 
 
 ```
 ssh yourUsername@{{ site.workshop_host_login }}
 ```
 {: .language-bash}
+
 
 ```
 {% include /snippets/01/login_output.{{ site.workshop_host_id }} %}
