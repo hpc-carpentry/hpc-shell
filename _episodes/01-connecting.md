@@ -232,25 +232,30 @@ when using SSH keys and `ssh yourUsername@some.computer.address` if only
 password access is available.  Let's attempt to connect to the HPC system
 now:
 
+
+<details>
+  <summary> EdDSA Key</summary> 
 ```
 ssh -i ~/.ssh/key_{{ site.workshop_host }}_ed25519 yourUsername@{{ site.workshop_host_login }}
 ```
 {: .language-bash}
+</details>
 
-or
-
+<details>
+  <summary> RSA Key</summary>
 ```
 ssh -i ~/.ssh/key_{{ site.workshop_host }}_rsa yourUsername@{{ site.workshop_host_login }}
 ```
 {: .language-bash}
+</details>
 
-or if SSH keys have not been enabled 
-
+<details>
+  <summary> No SSH keys</summary>
 ```
 ssh yourUsername@{{ site.workshop_host_login }}
 ```
 {: .language-bash}
-
+</details>
 
 ```
 {% include /snippets/01/login_output.{{ site.workshop_host_id }} %}
