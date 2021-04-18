@@ -126,7 +126,7 @@ macOS comes with SSH pre-installed: you do not have to do anything.
 > ## GUI Support
 >
 > If you know that the software you will be running requires a graphical user
-> interface, please install [XQuartz](www.xquartz.org).
+> interface, please install [XQuartz](https://www.xquartz.org).
 {: .discussion}
 
 ### Linux
