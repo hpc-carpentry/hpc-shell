@@ -206,8 +206,8 @@ this is a test
 Awesome, let's try that with a more complicated command, like `wc -l`.
 
 ```
-$ wc -l * > word_counts.txt
-$ cat word_counts.txt
+$ wc -l * > line_counts.txt
+$ cat line_counts.txt
 ```
 {: .language-bash}
 ```
@@ -232,23 +232,23 @@ input/output streams for every UNIX program you will run: `stdin`, `stdout`,
 and `stderr`.
 
 Let's dissect these three streams of input/output in the command we just ran:
-`wc -l * > word_counts.txt`
+`wc -l * > line_counts.txt`
 
 * `stdin` is the input to a program. In the command we just ran, `stdin` is
   represented by `*`, which is simply every filename in our current directory.
 * `stdout` contains the actual, expected output. In this case, `>` redirected
-  `stdout` to the file `word_counts.txt`.
+  `stdout` to the file `line_counts.txt`.
 * `stderr` typically contains error messages and other information that doesn't
   quite fit into the category of "output". If we insist on redirecting both
   `stdout` and `stderr` to the same file we would use `&>` instead of `>`. (We
   can redirect just `stderr` using `2>`.)
 
 Knowing what we know now, let's try re-running the command, and send all of the
-output (including the error message) to the same `word_counts.txt` files as
+output (including the error message) to the same `line_counts.txt` files as
 before.
 
 ```
-$ wc -l * &> word_counts.txt
+$ wc -l * &> line_counts.txt
 ```
 {: .language-bash}
 
@@ -256,7 +256,7 @@ Notice how there was no output to the console that time. Let's check that the
 error message went to the file like we specified.
 
 ```
-$ cat word_counts.txt
+$ cat line_counts.txt
 ```
 {: .language-bash}
 ```
@@ -267,7 +267,7 @@ wc: fastq: Is a directory
         0 fastq
    106290 gene_association.fb
         1 test.txt
-        7 word_counts.txt
+        7 line_counts.txt
    723512 total
 ```
 {: .output}
@@ -281,8 +281,8 @@ Appending to a file is done the same was as redirecting output. However,
 instead of `>`, we will use `>>`.
 
 ```
-$ echo "We want to add this sentence to the end of our file" >> word_counts.txt
-$ cat word_counts.txt
+$ echo "We want to add this sentence to the end of our file" >> line_counts.txt
+$ cat line_counts.txt
 ```
 {: .language-bash}
 ```
